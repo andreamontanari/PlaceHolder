@@ -36,6 +36,7 @@ I would like to add these functionalities to PlaceHolder:
 ### Todos
 
  - Write Tests
+ - New UI
  - Code refactoring
  - Add Sharing options
 
