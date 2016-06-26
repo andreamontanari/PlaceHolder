@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PlaceHolder</string>
+    <string name="action_settings">About</string>
+    <string name="intro">Benvenuti </string>
+    <string name="intro2">su </string>
+    <string name="intr">placeholder logo</string>
+    <string name="btnb">Comincia</string>
+    <string name="info">Pulsante info</string>
+    <string name="title_activity_locating">LocatingActivity</string>
+    <string name="descr">Per salvare la posizione, premi SALVA</string>
+    <string name="get"> SALVA </string>
+    <string name="pos"> Posizioni salvate </string>
+    <string name="title_activity_position">PositionActivity</string>
+	<string name="tv1">L\'indirizzo 1 apparirà qui</string>
+	<string name="tv2">L\'indirizzo 2 apparirà qui</string>
+	<string name="tv3">L\'indirizzo 3 apparirà qui</string>
+	<string name ="tv4">L\'indirizzo 4 apparirà qui</string>
+	<string name ="tv5">L\'indirizzo 5 apparirà qui</string>
+	<string name="maps">Google maps logo</string>
+	<string name="info1">PlaceHolder: City Edition</string>
+	<string name="info2">sviluppato da Andrea Montanari</string>
+	<string name="logoBy">Logo disegnato da Gabriele Biancat</string>
+	<string name="info3">Contattami su</string>
+	<string name="info4">clicca su una di queste icone</string>
+	<string name="fb">icona Facebook</string>
+	<string name="gmail">icona Gmail</string>
+	<string name="chrome">icona Browser</string>
+	<string name="note">Note aggiuntive si potranno vedere qui!</string>
+	<string name="notes">icona aggiungi nota</string>
+	<string name="plus">icona Plus</string>
+	<string name="noting">Aggiungi una nuova nota:</string>
+	<string name="modding">Modifica la nota selezionata:</string>
+	<string name="noteHint">Scrivi qualcosa qui!</string>
+	<string name="count">80</string>
+	<string name="gpshint">Configurazione ottimale</string>
+	<string name="help">Problemi?! Cliccami per ricevere aiuto</string>
+	<string name="title"> Impostazioni GPS</string>
+	<string name="gpsmess">Il GPS è spento, accendilo per cominciare</string>
+	<string name="sett">Impostazioni</string>
+	<string name="canc">Indietro</string>
+    <string name="mailinfo">Informazioni</string>
+	<string name="mailerr">Non ci sono client e-mail installati.</string>
+	<string name="webinf">Non c\'è una pagina disponibile al momento, ne aggiungo una presto</string>
+	<string name="weberr1">Nessuna app può completare la richiesta,</string>
+	<string name="weberr2"> Prego, installa un browser web</string>
+	<string name="addrnotfound">Indirizzo non trovato</string>
+	<string name="save">Salva</string>
+	<string name="undo">Annulla</string>
+	
+</resources>

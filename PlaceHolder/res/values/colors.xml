@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+      <color name="actionBarText">#FFFFFF</color> <!-- White -->
+      <color name="first">#000000</color> <!-- Black-->
+       <color name="btn1">#0000FF</color>
+       <color name="btn2">#1E90FF</color>
+       <color name="btnt1">#FFFFFF</color>
+       <color name="btnt2">#FFFFFF</color>
+       <color name="back">#FFFFFF</color>
+       <color name="blue">#33B5E5</color> <!-- Light Blue -->
+       <color name="violet">#AA66CC</color> <!--  Violet -->
+       <color name="green">#99CC00</color> <!-- Light Green -->
+       <color name="orange">#FFBB33</color> <!-- Light orange -->
+       <color name="red">#FF4444</color> <!-- Red -->
+        <color name="darkred">#CC0000</color>
+    </resources>

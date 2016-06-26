@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PlaceHolder</string>
+    <string name="action_settings">About</string>
+    <string name="intro">Welcome </string>
+    <string name="intro2">to </string>
+    <string name="intr">placeholder logo</string>
+    <string name="btnb">Start</string>
+    <string name="info">Info button</string>
+    <string name="title_activity_locating">LocatingActivity</string>
+    <string name="descr">To save your position, just hit GET</string>
+    <string name="get"> GET </string>
+    <string name="pos"> Saved Locations </string>
+    <string name="title_activity_position">PositionActivity</string>
+	<string name="tv1">Address 1 will appear here</string>
+	<string name="tv2">Address 2 will appear here</string>
+	<string name="tv3">Address 3 will appear here</string>
+	<string name ="tv4">Address 4 will appear here</string>
+	<string name ="tv5">Address 5 will appear here</string>
+	<string name="maps">Google maps logo</string>
+	<string name="info1">PlaceHolder: City Edition</string>
+	<string name="info2">developed by Andrea Montanari</string>
+	<string name="logoBy">Logo designed by Gabriele Biancat</string>
+	<string name="info3">Contacts information</string>
+	<string name="info4">click on the following:</string>
+	<string name="fb">Facebook icon</string>
+	<string name="gmail">Gmail icon</string>
+	<string name="chrome">Browser icon</string>
+	<string name="note">Additional notes will be readable here!</string>
+	<string name="notes">Add note icon</string>
+	<string name="plus">Plus icon</string>
+	<string name="noting">Add a new note:</string>
+	<string name="modding">Edit the selected note:</string>
+	<string name="noteHint">Write here something!</string>
+	<string name="count">80</string>
+	<string name="gpshint">Preferable configuration</string>
+	<string name="help">Troubles?! Click me for settings\' help!</string>
+	<string name="title"> GPS Settings</string>
+	<string name="gpsmess">GPS is disabled, enable it to start</string>
+	<string name="sett">Settings</string>
+	<string name="canc">Cancel</string>
+	<string name="mailinfo">Information</string>
+	<string name="mailerr">There are no email clients installed.</string>
+	<string name="webinf">No web pages yet, I will update one soon</string>
+	<string name="weberr1">No application can handle this request,</string>
+	<string name="weberr2"> Please install a web browser</string>
+	<string name="addrnotfound">Address not found</string>
+	<string name="save">Save</string>
+	<string name="undo">Undo</string>
+	
+</resources>

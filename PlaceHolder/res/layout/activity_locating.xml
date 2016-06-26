@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LocatingActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/descr"
+        android:textColor="@color/first" />
+   
+   <fragment 
+          android:id="@+id/map"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="15dp"
+          android:layout_below="@+id/textView1"
+          android:layout_above="@+id/button1"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+
+    <EditText
+        android:id="@+id/editTextResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageButton1"
+        android:layout_alignLeft="@+id/map"
+        android:ems="10"
+        android:inputType="text"
+        android:maxLength="80"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/get"
+        android:onClick="getCoords"
+        android:text="@string/get"
+        android:textColor="@color/btnt1" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_alignRight="@+id/button2"
+        android:layout_marginRight="17dp"
+        android:background="@drawable/note"
+        android:contentDescription="@string/notes"
+        android:onClick="addNote"
+        android:src="@android:drawable/stat_notify_chat" />
+
+    <ImageView
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageButton1"
+        android:layout_toLeftOf="@+id/imageButton1"
+        android:contentDescription="@string/plus"
+        android:src="@android:drawable/ic_input_add" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="46dp"
+        android:background="@drawable/locations"
+        android:onClick="getPositions"
+        android:text="@string/pos"
+        android:textColor="@color/btnt2" />
+
+</RelativeLayout>
