@@ -39,6 +39,7 @@ I would like to add these functionalities to PlaceHolder:
  - New UI
  - Code refactoring
  - Add Sharing options
+ - Add 2 Views for saved locations (List and Map with pins)
 
 License
 ----
