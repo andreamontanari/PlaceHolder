@@ -15,7 +15,7 @@ PlaceHolder uses a number of libraries:
 
 * [GoogleMaps](https://developers.google.com/maps/documentation/android-api/intro) - Google official API for maps customization!
 * [Github](https://github.com/andreamontanari/PlaceHolder) - track down changes in your project
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
+* [markdown-it](http://daringfireball.net/projects/markdown/) - Markdown parser done right. Fast and easy to extend.
 
 And of course PlaceHolder itself is open source with a [public repository](https://github.com/andreamontanari/PlaceHolder)
  on GitHub.
