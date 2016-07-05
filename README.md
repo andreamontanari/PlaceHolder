@@ -37,8 +37,9 @@ I would like to add these functionalities to PlaceHolder:
 
  - Write Tests
  - New UI
+ - Save both LAT, LNG and Google's human-readable address
  - Code refactoring
- - Add Sharing options
+ - Add Share location Option
  - Add 2 Views for saved locations (List and Map with pins)
 
 License
