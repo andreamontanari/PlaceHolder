@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PlaceHolder</string>
+    <string name="intro_title">Benvenuti su PlaceHolder</string>
+    <string name="intro_text">Salva la posizione attuale o naviga tra quelle già salvate</string>
+    <string name="intro_places_btn">Le tue posizioni</string>
+    <string name="intro_save_place_btn">Salva la tua posizione</string>
+    <string name="maps_title">Salva la tua posizione</string>
+    <string name="places_title">Le tue posizioni</string>
+</resources>

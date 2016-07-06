@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">PlaceHolder</string>
+    <string name="intro_title">Welcome to PlaceHolder</string>
+    <string name="intro_text">Pin down your location or view the saved ones</string>
+    <string name="intro_places_btn">Your places</string>
+    <string name="intro_save_place_btn">Save your location</string>
+    <string name="maps_title">Save your position</string>
+    <string name="places_title">Your places</string>
 </resources>

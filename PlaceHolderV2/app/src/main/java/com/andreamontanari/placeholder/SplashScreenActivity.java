@@ -20,7 +20,9 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
                 Intent intent = new Intent(SplashScreenActivity.this, IntroActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+
                 finish();
             }
         }, SPLASH_DISPLAY_LENGTH);
