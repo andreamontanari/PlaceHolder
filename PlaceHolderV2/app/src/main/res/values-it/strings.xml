@@ -7,4 +7,11 @@
     <string name="intro_save_place_btn">Salva la tua posizione</string>
     <string name="maps_title">Salva la tua posizione</string>
     <string name="places_title">Le tue posizioni</string>
+    <string name="form_cancel">Annulla</string>
+    <string name="permissions_missing">Non hai accettato tutti i permessi!</string>
+    <string name="permission_phrase">Devi permettere di:</string>
+    <string name="permission_coarse_location">Posizione GPS</string>
+    <string name="permission_fine_location">Posizione GPS accurata</string>
+    <string name="permission_write_ext_storage">Scrivere nella memoria esterna</string>
+    <string name="gps_settings_error">Errore: per piacere riprova!</string>
 </resources>

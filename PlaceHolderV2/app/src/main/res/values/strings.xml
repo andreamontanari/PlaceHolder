@@ -6,4 +6,12 @@
     <string name="intro_save_place_btn">Save your location</string>
     <string name="maps_title">Save your position</string>
     <string name="places_title">Your places</string>
+    <string name="form_cancel">Cancel</string>
+    <string name="permissions_missing">There are some permissions missing!</string>
+    <string name="permission_phrase">You have to allow to:</string>
+    <string name="permission_coarse_location">Coarse location</string>
+    <string name="permission_fine_location">Fine location</string>
+    <string name="permission_write_ext_storage">Write external storage</string>
+    <string name="google_maps_api_key" translatable="false">AIzaSyDndS5nQ9E1Sm8Dl_4Gg7RuI5QWf57jsPk</string>
+    <string name="gps_settings_error">Error: please try again!</string>
 </resources>
