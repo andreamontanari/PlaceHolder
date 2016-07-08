@@ -14,4 +14,7 @@
     <string name="permission_write_ext_storage">Write external storage</string>
     <string name="google_maps_api_key" translatable="false">AIzaSyDndS5nQ9E1Sm8Dl_4Gg7RuI5QWf57jsPk</string>
     <string name="gps_settings_error">Error: please try again!</string>
+    <string name="list_no_places">There are no places saved!</string>
+    <string name="share_btn_label">Share</string>
+    <string name="directions_btn_label">Directions</string>
 </resources>

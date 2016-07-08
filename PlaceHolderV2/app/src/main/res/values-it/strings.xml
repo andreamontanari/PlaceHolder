@@ -14,4 +14,7 @@
     <string name="permission_fine_location">Posizione GPS accurata</string>
     <string name="permission_write_ext_storage">Scrivere nella memoria esterna</string>
     <string name="gps_settings_error">Errore: per piacere riprova!</string>
+    <string name="list_no_places">Non ci sono posizioni salvate!</string>
+    <string name="share_btn_label">Condividi</string>
+    <string name="directions_btn_label">Navigaci</string>
 </resources>

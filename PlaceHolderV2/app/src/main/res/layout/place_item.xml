@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/cv"
+    android:layout_marginLeft="@dimen/activity_vertical_margin"
+    android:layout_marginRight="@dimen/activity_vertical_margin"
+    android:layout_marginTop="2dip"
+    android:layout_marginBottom="2dip"
+    card_view:cardUseCompatPadding="true">
+    >
+
+    <!--
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/icon"
+                android:src="@mipmap/ic_alarm_black_24dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/name"
+                android:layout_toRightOf="@+id/icon"
+                android:layout_alignParentTop="true"
+                android:text="John Doe"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/DarkerEmprove"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/appointment"
+                android:layout_toRightOf="@+id/icon"
+                android:layout_below="@+id/name"
+                android:textColor="#A9A9A9"
+                android:text="02/05/2016 16:00"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/phoneNr"
+                android:visibility="invisible"
+                />
+
+
+
+        </RelativeLayout>
+
+        -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:id="@+id/header">
+
+            <TextView
+                android:id="@+id/streetname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Via dei Crollalanza 6, Milano"
+                android:maxLines="1"
+                android:paddingBottom="5dp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/latlng"
+                android:text="45.465422, 9.185924"
+                android:textColor="@color/colorWhite"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/comments"
+            android:textStyle="italic"
+            android:text="Lorem ipsum newuiwfwfcx  asèdkasdèk apsodksad sdopkpasodkasdokas sdasdp asda , asdasdp "
+            android:textColor="@color/colorPrimaryDark"
+            />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <Button
+                    android:id="@+id/share_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/share_btn_label"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:textColor="@color/colorAccent"
+                    android:onClick="showWelcomePopUp"
+                    />
+
+                <Button
+                    android:id="@+id/direction_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/directions_btn_label"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:textColor="@color/colorAccent"
+                    android:onClick="showWelcomePopUp"
+                    android:layout_toRightOf="@+id/share_btn"
+                    android:layout_toEndOf="@+id/share_btn"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <!--<TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:id="@+id/saved_date"
+            android:maxLines="3"
+            android:padding="10dp"
+            android:textColor="#222"
+            android:text="02/05/2016 16:00"
+            android:textSize="14dp"
+            android:visibility="invisible"/> -->
+
+        <!--
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/header"
+    android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="5dp"
+            android:id="@+id/shareLL">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/share_btn"
+            android:padding="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="10sp"
+                android:text="@string/share_btn_label"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:id="@+id/directionsLL">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/directions_btn"
+            android:padding="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="10sp"
+                android:text="@string/directions_btn_label"/>
+        </LinearLayout>
+</RelativeLayout> -->
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
