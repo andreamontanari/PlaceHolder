@@ -35,16 +35,27 @@ public class IntroActivity extends AppCompatActivity {
     protected static final int REQUEST_CHECK_SETTINGS = 0x1;
 
     GPSTracker gps;
+    
+    SharedPreferences prefs = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_intro);
-
-        setToolBar();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-
+        
+        prefs = getSharedPreferences("PLACEHOLDER_SP", MODE_PRIVATE);
+        
+        if (prefs.getBoolean("firstrun", true)) {
+            // show walkthrough --> then set toolbar
+            // initialise Realm.io
+            RealmConfiguration realmConfiguration = new RealmConfiguration.Builder(this).build();
+            Realm.setDefaultConfiguration(realmConfiguration);
+            prefs.edit().putBoolean("firstrun", false).commit();
+        } else {
+            setToolBar();
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
     }
 
     public void watchPlaces(View view) {
