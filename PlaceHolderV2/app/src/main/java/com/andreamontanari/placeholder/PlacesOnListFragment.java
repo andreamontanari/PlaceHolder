@@ -27,7 +27,8 @@ public class PlacesOnListFragment extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-
+    private Realm realm;
+    
     public PlacesOnListFragment(){}
 
     @Override
@@ -44,8 +45,10 @@ public class PlacesOnListFragment extends Fragment {
     @Override
     public void onStart() {
 
+        realm = Realm.getDefaultInstance();
+
         final Context context = getActivity().getApplicationContext();
-        List<Place> places = null; // will place function to load saved places
+        List<Place> places = getSavedPlaces(); // will place function to load saved places
         if (places != null && places.size() > 0) {
 
             mAdapter = new RVAdapter(places);
@@ -75,6 +78,20 @@ public class PlacesOnListFragment extends Fragment {
         );
 
         super.onStart();
+    }
+    
+    
+    public List<Place> getSavedPlaces() {
+        RealmResults<Place> result = realm.where(Place.class)
+                                  .findAll();
+    }
+    
+    
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        realm.close();
     }
 
 
