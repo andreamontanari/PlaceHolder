@@ -23,9 +23,11 @@ package com.andreamontanari.placeholder.adapter;
 /**
  * Created by andreamontanari on 18/11/15.
  */
-public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ScheduledSmsViewHolder>{
+ 
 
-    public static class ScheduledSmsViewHolder extends RecyclerView.ViewHolder {
+public class RVAdapter extendsRealmRecyclerViewAdapter<TimeStamp, RVAdapter.PlacesViewHolder> {
+                                        
+    public static class PlacesViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
         TextView streetName;
         TextView latlng;
@@ -33,7 +35,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ScheduledSmsViewHo
         TextView comments;
         ImageView icon;
 
-        ScheduledSmsViewHolder(View itemView) {
+        PlacesViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
             streetName = (TextView)itemView.findViewById(R.id.streetname);
@@ -46,20 +48,22 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ScheduledSmsViewHo
 
     List<Place> places;
 
-    public RVAdapter(List<Place> places) {
-        this.places = places;
+    public RVAdapter(RecyclerViewExampleActivity activity, OrderedRealmCollection<TimeStamp> data) {
+        super(activity ,data, true);
+        this.activity = activity;
     }
+
     RVAdapter() { }
 
     @Override
-    public ScheduledSmsViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PlacesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.place_item, parent, false);
-        ScheduledSmsViewHolder svh = new ScheduledSmsViewHolder(v);
+        PlacesViewHolder svh = new PlacesViewHolder(v);
         return svh;
     }
 
     @Override
-    public void onBindViewHolder(ScheduledSmsViewHolder holder, int position) {
+    public void onBindViewHolder(PlacesViewHolder holder, int position) {
         holder.streetName.setText(places.get(position).getStreetName());
         holder.latlng.setText(places.get(position).getLatLng());
         if (places.get(position).getPlaceComment() == "" || places.get(position).getPlaceComment() == null) {
