@@ -25,7 +25,7 @@ package com.andreamontanari.placeholder.adapter;
  */
  
 
-public class RVAdapter extendsRealmRecyclerViewAdapter<TimeStamp, RVAdapter.PlacesViewHolder> {
+public class RVAdapter extendsRealmRecyclerViewAdapter<Place, RVAdapter.PlacesViewHolder> {
                                         
     public static class PlacesViewHolder extends RecyclerView.ViewHolder {
         CardView cv;
@@ -48,7 +48,7 @@ public class RVAdapter extendsRealmRecyclerViewAdapter<TimeStamp, RVAdapter.Plac
 
     List<Place> places;
 
-    public RVAdapter(RecyclerViewExampleActivity activity, OrderedRealmCollection<TimeStamp> data) {
+    public RVAdapter(PlacesActivity activity, OrderedRealmCollection<Place> data) {
         super(activity ,data, true);
         this.activity = activity;
     }
