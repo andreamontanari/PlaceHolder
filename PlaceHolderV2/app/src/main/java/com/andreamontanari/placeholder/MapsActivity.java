@@ -116,9 +116,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void storePlace(double latitude, double longitude, String streetName) {
         realm.beginTransaction();
         Place place = realm.createObject(Place.class); // Create a new object
-        place.setLatitude("");
-        place.setLongitude("");
-        place.setStreetName("");
+        place.setLatitude(latitude);
+        place.setLongitude(longitude);
+        place.setStreetName(streetName);
         realm.commitTransaction();
     }
 
