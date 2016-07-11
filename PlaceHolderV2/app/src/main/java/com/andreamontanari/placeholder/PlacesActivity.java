@@ -6,7 +6,14 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.andreamontanari.placeholder.utils.PlaceMisc;
 
 /**
  * Created by andreamontanari on 07/07/16.
@@ -20,7 +27,6 @@ public class PlacesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_places);
 
         setToolBar();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Create a new Fragment to be placed in the activity layout
         PlacesOnListFragment firstFragment = new PlacesOnListFragment();
@@ -51,5 +57,16 @@ public class PlacesActivity extends AppCompatActivity {
                 startActivity(homeIntent);
         }
         return (super.onOptionsItemSelected(menuItem));
+    }
+
+    public void recycle_view_action(View view) {
+        switch (view.getId()) {
+            case R.id.share_btn:
+                Toast.makeText(this, "SHARE", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.direction_btn:
+                Toast.makeText(this, "GO THERE", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 }

@@ -21,6 +21,11 @@ import com.andreamontanari.placeholder.adapter.RVAdapter;
 
 import java.util.List;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
+import io.realm.Sort;
+
 public class PlacesOnListFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
@@ -45,13 +50,19 @@ public class PlacesOnListFragment extends Fragment {
     @Override
     public void onStart() {
 
-        realm = Realm.getDefaultInstance();
-
         final Context context = getActivity().getApplicationContext();
-        List<Place> places = getSavedPlaces(); // will place function to load saved places
-        if (places != null && places.size() > 0) {
 
-            mRecyclerView.setAdapter(new RVAdapter(this, realm.where(Place.class).findAllAsync()));
+        RealmConfiguration realmConfig = new RealmConfiguration.Builder(context)
+                .deleteRealmIfMigrationNeeded()
+                .build();
+
+        // Open the Realm for the UI thread.
+        realm = Realm.getInstance(realmConfig);
+
+        RealmResults<Place> places = realm.where(Place.class)
+                            .findAllSorted("savedOn", Sort.DESCENDING); // will place function to load saved places
+        if (places != null && places.size() > 0) {
+            mRecyclerView.setAdapter(new RVAdapter((PlacesActivity) this.getActivity(), places));
         } else {
             Toast.makeText(context, getResources().getString(R.string.list_no_places), Toast.LENGTH_SHORT).show();
         }
@@ -59,22 +70,6 @@ public class PlacesOnListFragment extends Fragment {
 
         mLayoutManager = new LinearLayoutManager(context);
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-        mRecyclerView.addOnItemTouchListener(
-                new RecyclerItemClickListener(context, new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View view, int position) {
-                        switch (view.getId()) {
-                            case R.id.share_btn:
-                                Toast.makeText(context, "SHARE", Toast.LENGTH_SHORT).show();
-                                    break;
-                            case R.id.direction_btn:
-                                Toast.makeText(context, "GO THERE", Toast.LENGTH_SHORT).show();
-                                    break;
-                        }
-                    }
-                })
-        );
 
         super.onStart();
     }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -24,6 +25,9 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+
 /**
  * Created by andreamontanari on 27/06/16.
  */
@@ -39,22 +43,20 @@ public class IntroActivity extends AppCompatActivity {
     SharedPreferences prefs = null;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_intro);
         
         prefs = getSharedPreferences("PLACEHOLDER_SP", MODE_PRIVATE);
-        
+
         if (prefs.getBoolean("firstrun", true)) {
             // show walkthrough --> then set toolbar
             // initialise Realm.io
-            RealmConfiguration realmConfiguration = new RealmConfiguration.Builder(this).build();
-            Realm.setDefaultConfiguration(realmConfiguration);
-            prefs.edit().putBoolean("firstrun", false).commit();
+            prefs.edit().putBoolean("firstrun", false).apply();
+            setToolBar();
         } else {
             setToolBar();
-            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         }
     }
 

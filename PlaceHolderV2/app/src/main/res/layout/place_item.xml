@@ -82,7 +82,6 @@
                 android:id="@+id/streetname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Via dei Crollalanza 6, Milano"
                 android:maxLines="1"
                 android:paddingBottom="5dp"
                 android:textColor="@color/colorWhite"
@@ -93,9 +92,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/latlng"
-                android:text="45.465422, 9.185924"
                 android:textColor="@color/colorWhite"
                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/latitude"
+                android:visibility="invisible"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/longitude"
+                android:visibility="invisible"
+                />
+
+
 
         </LinearLayout>
 
@@ -103,15 +117,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/header"
-            android:padding="10dp"
+            android:padding="5dp"
             android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="recycle_view_action"
             android:id="@+id/comments"
             android:textStyle="italic"
-            android:text="Lorem ipsum newuiwfwfcx  asèdkasdèk apsodksad sdopkpasodkasdokas sdasdp asda , asdasdp "
             android:textColor="@color/colorPrimaryDark"
             />
             <RelativeLayout
@@ -125,7 +139,7 @@
                     android:text="@string/share_btn_label"
                     style="?android:attr/borderlessButtonStyle"
                     android:textColor="@color/colorAccent"
-                    android:onClick="showWelcomePopUp"
+                    android:onClick="recycle_view_action"
                     />
 
                 <Button
@@ -135,7 +149,7 @@
                     android:text="@string/directions_btn_label"
                     style="?android:attr/borderlessButtonStyle"
                     android:textColor="@color/colorAccent"
-                    android:onClick="showWelcomePopUp"
+                    android:onClick="recycle_view_action"
                     android:layout_toRightOf="@+id/share_btn"
                     android:layout_toEndOf="@+id/share_btn"
                     android:visibility="visible" />

@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import io.realm.RealmObject;
+
 /**
  * Created by andreamontanari on 08/07/16.
  */
@@ -11,18 +13,8 @@ public class Place extends RealmObject {
 
     private String streetName;
     private double latitude, longitude;
-    private String savedOn;
+    private Date savedOn;
     private String placeComment;
-
-    public Place(String streetName, double latitude, double longitude, String placeComment) {
-        this.streetName = streetName;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.placeComment = placeComment;
-        DateFormat df = new SimpleDateFormat("HH:mm dd/MM/yyyy");
-        String requiredDate = df.format(new Date()).toString();
-        this.savedOn = requiredDate;
-    }
 
     public double getLatitude() {
         return latitude;
@@ -49,11 +41,13 @@ public class Place extends RealmObject {
     }
 
     public String getSavedOn() {
-        return savedOn;
+        DateFormat df = new SimpleDateFormat("HH:mm dd/MM/yyyy");
+        String requiredDate = df.format(savedOn).toString();
+        return requiredDate;
     }
 
-    public void setSavedOn(String savedOn) {
-        this.savedOn = savedOn;
+    public void setSavedOn() {
+        this.savedOn = new Date();
     }
 
     public String getStreetName() {
