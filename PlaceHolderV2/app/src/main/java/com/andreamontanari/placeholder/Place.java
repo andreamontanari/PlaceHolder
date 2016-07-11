@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by andreamontanari on 08/07/16.
  */
-public class Place {
+public class Place extends RealmObject {
 
     private String streetName;
     private double latitude, longitude;
