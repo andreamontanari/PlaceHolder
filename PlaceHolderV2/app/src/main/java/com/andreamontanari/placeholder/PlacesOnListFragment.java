@@ -51,8 +51,7 @@ public class PlacesOnListFragment extends Fragment {
         List<Place> places = getSavedPlaces(); // will place function to load saved places
         if (places != null && places.size() > 0) {
 
-            mAdapter = new RVAdapter(places);
-            mRecyclerView.setAdapter(mAdapter);
+            mRecyclerView.setAdapter(new RVAdapter(this, realm.where(Place.class).findAllAsync()));
         } else {
             Toast.makeText(context, getResources().getString(R.string.list_no_places), Toast.LENGTH_SHORT).show();
         }
@@ -80,14 +79,6 @@ public class PlacesOnListFragment extends Fragment {
         super.onStart();
     }
     
-    
-    public List<Place> getSavedPlaces() {
-        RealmResults<Place> result = realm.where(Place.class)
-                                  .findAll();
-    }
-    
-    
-
     @Override
     public void onStop() {
         super.onStop();
