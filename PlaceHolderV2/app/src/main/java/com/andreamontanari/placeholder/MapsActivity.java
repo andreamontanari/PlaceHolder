@@ -35,6 +35,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GPSTracker gps;
     private LatLng latlng;
     private final int ZOOM_LEVEL = 15;
+    
+    private Realm realm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         setToolBar();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        
+        realm = Realm.getDefaultInstance();
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -107,6 +111,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         add_note_btn.setVisibility(View.GONE);
         mMap.clear();
         Toast.makeText(this, "Registered note for shown place!", Toast.LENGTH_SHORT).show();
+    }
+    
+    public void storePlace(double latitude, double longitude, String streetName) {
+        realm.beginTransaction();
+        Place place = realm.createObject(Place.class); // Create a new object
+        place.setLatitude("");
+        place.setLongitude("");
+        place.setStreetName("");
+        realm.commitTransaction();
     }
 
 }
