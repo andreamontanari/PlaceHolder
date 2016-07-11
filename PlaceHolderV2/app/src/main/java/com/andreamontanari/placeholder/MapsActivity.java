@@ -34,6 +34,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private GPSTracker gps;
     private LatLng latlng;
+    private double latitude, longitude;
+    private String streetName;
     private final int ZOOM_LEVEL = 15;
     
     private Realm realm;
@@ -62,8 +64,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         gps = new GPSTracker(this);
         if(gps.canGetLocation()) {
             //retrieve coordinates
-            double latitude = gps.getLatitude();
-            double longitude = gps.getLongitude();
+            latitude = gps.getLatitude();
+            longitude = gps.getLongitude();
             latlng = new LatLng(latitude, longitude);
             //zoom in the map by level 16
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng, ZOOM_LEVEL));
@@ -92,13 +94,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         gps = new GPSTracker(this);
         if(gps.canGetLocation()) {
             //retrieve coordinates
-            double latitude = gps.getLatitude();
-            double longitude = gps.getLongitude();
+            latitude = gps.getLatitude();
+            longitude = gps.getLongitude();
             latlng = new LatLng(latitude, longitude);
             mMap.addMarker(new MarkerOptions()
                     .position(latlng)
                     .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_add_location_white_48dp))
                     .title("Last saved place!"));
+            streetName = "";
+            storePlace(latitude, longitude, streetName);
         }
 
         FloatingActionButton add_note_btn = (FloatingActionButton) findViewById(R.id.add_note_fab);
