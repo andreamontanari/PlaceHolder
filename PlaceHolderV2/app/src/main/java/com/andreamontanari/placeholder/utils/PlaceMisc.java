@@ -73,5 +73,27 @@ public class PlaceMisc {
         });
 
     }
+    
+    public void deleteAllPlaces() {
+        
+        // Create the Realm configuration
+        RealmConfiguration realmConfig = new RealmConfiguration.Builder(context)
+                .deleteRealmIfMigrationNeeded()
+                .build();
+        // Open the Realm for the UI thread.
+        realm = Realm.getInstance(realmConfig);
+        
+        // obtain the results of a query
+        final RealmResults<Place> results = realm.where(Place.class).findAll();
+        
+        // All changes to data must happen in a transaction
+        realm.executeTransaction(new Realm.Transaction() {
+        @Override
+        public void execute(Realm realm) {
+                // Delete all matches
+                results.deleteAllFromRealm();
+            }
+        });
+    }
 
 }
