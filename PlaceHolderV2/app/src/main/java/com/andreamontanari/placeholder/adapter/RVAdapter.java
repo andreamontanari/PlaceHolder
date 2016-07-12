@@ -75,15 +75,22 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
                 PlaceMisc.storePlaceNote(commentPlace, lat, lng,  context);
             }
         });
-        //holder.savedDate.setText(places.get(position).getSavedOn());
-        //holder.icon.setImageResource(persons.get(i).photoId);
-        /*
-        if (scheduled.get(position).is_scheduled()) {
-            holder.cv.setCardBackgroundColor(Color.parseColor("#8BC34A"));
-        } else {
-            holder.cv.setCardBackgroundColor(Color.parseColor("#EF5350"));
-        }
-        */
+        
+         holder.v.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // show alert dialog
+                
+                // on okay
+                // delete selected item from Realm.io
+                Place selected = getData().get(position);
+                selected.deleteFromRealm()
+                return true;
+                
+                // else -- dismiss
+            }
+        });
+        
     }
 
     @Override
