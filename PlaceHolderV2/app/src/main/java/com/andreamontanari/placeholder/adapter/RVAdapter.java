@@ -80,14 +80,35 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
             @Override
             public boolean onLongClick(View v) {
                 // show alert dialog
-                
-                // on okay
-                // delete selected item from Realm.io
-                Place selected = getData().get(position);
-                selected.deleteFromRealm()
+                AlertDialog.Builder deleteDialog = new AlertDialog.Builder(this);
+                // Setting Dialog Title
+                deleteDialog.setTitle("Confirm Deletion");
+                // Setting Dialog Message
+                deleteDialog.setMessage("Are you sure you want delete this Place?");
+                // Setting Icon to Dialog
+                deleteDialog.setIcon(R.drawable.delete);
+                // Setting Positive "Yes" Btn
+                deleteDialog.setPositiveButton("YES",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Write your code here to execute after dialog
+                                // delete selected item from Realm.io
+                                Place selected = getData().get(position);
+                                selected.deleteFromRealm();
+                            Toast.makeText(getApplicationContext(),"Selected place deleted", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                // Setting Negative "NO" Btn
+                deleteDialog.setNegativeButton("NO",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Write your code here to execute after dialog
+                                    .show();
+                            dialog.cancel(); // dialog.dismiss()
+                        }
+                    });
+                    
                 return true;
-                
-                // else -- dismiss
             }
         });
         
