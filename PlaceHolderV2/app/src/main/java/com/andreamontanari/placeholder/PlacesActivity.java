@@ -59,14 +59,4 @@ public class PlacesActivity extends AppCompatActivity {
         return (super.onOptionsItemSelected(menuItem));
     }
 
-    public void recycle_view_action(View view) {
-        switch (view.getId()) {
-            case R.id.share_btn:
-                Toast.makeText(this, "SHARE", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.direction_btn:
-                Toast.makeText(this, "GO THERE", Toast.LENGTH_SHORT).show();
-                break;
-        }
-    }
 }

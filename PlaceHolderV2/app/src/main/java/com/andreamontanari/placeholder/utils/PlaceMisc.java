@@ -1,6 +1,9 @@
 package com.andreamontanari.placeholder.utils;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +15,11 @@ import com.andreamontanari.placeholder.Place;
 import com.andreamontanari.placeholder.R;
 import com.github.clans.fab.FloatingActionButton;
 
+import java.util.Locale;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
 import io.realm.Sort;
 
 /**
@@ -74,7 +80,7 @@ public class PlaceMisc {
 
     }
     
-    public void deleteAllPlaces() {
+    public static void deleteAllPlaces(Context context) {
         
         // Create the Realm configuration
         RealmConfiguration realmConfig = new RealmConfiguration.Builder(context)
@@ -85,36 +91,35 @@ public class PlaceMisc {
         
         // obtain the results of a query
         final RealmResults<Place> results = realm.where(Place.class).findAll();
-        
-        // All changes to data must happen in a transaction
-        realm.executeTransaction(new Realm.Transaction() {
-        @Override
-        public void execute(Realm realm) {
-                // Delete all matches
-                results.deleteAllFromRealm();
-            }
-        });
+
+        realm.beginTransaction();
+        results.deleteAllFromRealm();
+        realm.commitTransaction();
+
+        Toast.makeText(context, context.getString(R.string.reset_successful), Toast.LENGTH_SHORT).show();
     }
     
-    public void getDirections(double latitude, double longitude, Context context) {
+    public static void getDirections(double latitude, double longitude, Context context) {
 
         String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?daddr=%f,%f", latitude, longitude);
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
         intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         try
         {
-            startActivity(intent);
+            context.startActivity(intent);
         }
         catch(ActivityNotFoundException ex)
         {
             try
             {
                 Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                startActivity(unrestrictedIntent);
+                unrestrictedIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(unrestrictedIntent);
             }
             catch(ActivityNotFoundException innerEx)
             {
-                Toast.makeText(context, "Please install a maps application", Toast.LENGTH_LONG).show();
+                Toast.makeText(context, "Please install a maps application", Toast.LENGTH_SHORT).show();
             }
         }
     }

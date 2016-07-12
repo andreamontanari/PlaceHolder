@@ -123,7 +123,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="recycle_view_action"
             android:id="@+id/comments"
             android:textStyle="italic"
             android:textColor="@color/colorPrimaryDark"
@@ -139,7 +138,6 @@
                     android:text="@string/share_btn_label"
                     style="?android:attr/borderlessButtonStyle"
                     android:textColor="@color/colorAccent"
-                    android:onClick="recycle_view_action"
                     />
 
                 <Button
@@ -149,10 +147,19 @@
                     android:text="@string/directions_btn_label"
                     style="?android:attr/borderlessButtonStyle"
                     android:textColor="@color/colorAccent"
-                    android:onClick="recycle_view_action"
                     android:layout_toRightOf="@+id/share_btn"
                     android:layout_toEndOf="@+id/share_btn"
                     android:visibility="visible" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/delete_btn"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/places_ic_clear"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
             </RelativeLayout>
         </LinearLayout>
 

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+    <include layout="@layout/tool_bar"
+        android:id="@+id/toolbar"/>
+    <TextView
+        android:id="@+id/introLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="@string/developed_label"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/devTeam"
+        android:src="@mipmap/icon"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/introLabel"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/designer_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/designed_by"
+        android:layout_below="@+id/devTeam"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/supportLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/follow_label"
+        android:layout_below="@+id/designer_lbl"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:id="@+id/socialBtns"
+        android:layout_below="@id/supportLabel">
+
+        <ImageView
+            android:id="@+id/facebookBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/facebook_social_button"
+            android:onClick="visitFacebook"/>
+
+        <ImageView
+            android:id="@+id/webBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/web_social_button"
+            android:onClick="visitWebsite"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_above="@+id/erase_btn"
+        android:id="@+id/contact_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/contact_btn_label"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorWhite"
+        android:onClick="contactDeveloper"/>
+
+    <Button
+        android:layout_above="@+id/linkLabel"
+        android:id="@+id/erase_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/erase_btn_label"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
+        android:layout_marginBottom="20dp"
+        android:onClick="eraseAll"/>
+
+    <TextView
+        android:id="@+id/linkLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:text="@string/placeholder_link"
+        android:autoLink="web"
+        android:clickable="true"
+        android:linksClickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"/>
+
+</RelativeLayout>

@@ -5,17 +5,23 @@ package com.andreamontanari.placeholder.adapter;
  */
 
         import android.content.Context;
+        import android.content.DialogInterface;
+        import android.content.Intent;
         import android.graphics.Color;
         import android.support.annotation.NonNull;
         import android.support.annotation.Nullable;
+        import android.support.v7.app.AlertDialog;
         import android.support.v7.widget.CardView;
         import android.support.v7.widget.RecyclerView;
         import android.util.Log;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
+        import android.widget.Button;
+        import android.widget.EditText;
         import android.widget.ImageView;
         import android.widget.TextView;
+        import android.widget.Toast;
 
 
         import com.andreamontanari.placeholder.Place;
@@ -27,6 +33,8 @@ package com.andreamontanari.placeholder.adapter;
         import java.util.List;
 
         import io.realm.OrderedRealmCollection;
+        import io.realm.Realm;
+        import io.realm.RealmConfiguration;
         import io.realm.RealmRecyclerViewAdapter;
 
 /**
@@ -53,6 +61,7 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
 
     @Override
     public void onBindViewHolder(final PlacesViewHolder holder, final int position) {
+
         holder.streetName.setText(getData().get(position).getStreetName());
         holder.latlng.setText(getData().get(position).getLatLng());
         holder.latitude.setText(Double.toString(getData().get(position).getLatitude()));
@@ -68,47 +77,76 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
             @Override
             public void onClick(View v) {
                 TextView tv = (TextView) v.findViewById(R.id.comments);
-
                 double lat = Double.parseDouble(holder.latitude.getText().toString());
-                double lng = Double.parseDouble(holder.longitude.getText().toString());;
+                double lng = Double.parseDouble(holder.longitude.getText().toString());
                 String commentPlace = tv.getText().toString();
                 PlaceMisc.storePlaceNote(commentPlace, lat, lng,  context);
             }
         });
-        
-         holder.v.setOnLongClickListener(new View.OnLongClickListener() {
+
+        holder.nav_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                // show alert dialog
-                AlertDialog.Builder deleteDialog = new AlertDialog.Builder(this);
-                // Setting Dialog Title
-                deleteDialog.setTitle("Confirm Deletion");
-                // Setting Dialog Message
-                deleteDialog.setMessage("Are you sure you want delete this Place?");
-                // Setting Icon to Dialog
-                deleteDialog.setIcon(R.drawable.delete);
-                // Setting Positive "Yes" Btn
-                deleteDialog.setPositiveButton("YES",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            // Write your code here to execute after dialog
-                                // delete selected item from Realm.io
-                                Place selected = getData().get(position);
-                                selected.deleteFromRealm();
-                            Toast.makeText(getApplicationContext(),"Selected place deleted", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                // Setting Negative "NO" Btn
-                deleteDialog.setNegativeButton("NO",
-                    new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            // Write your code here to execute after dialog
-                                    .show();
-                            dialog.cancel(); // dialog.dismiss()
-                        }
-                    });
-                    
-                return true;
+            public void onClick(View v) {
+                double lat = Double.parseDouble(holder.latitude.getText().toString());
+                double lng = Double.parseDouble(holder.longitude.getText().toString());
+                PlaceMisc.getDirections(lat, lng, activity.getApplicationContext());
+            }
+        });
+
+        holder.share_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double lat = Double.parseDouble(holder.latitude.getText().toString());
+                double lng = Double.parseDouble(holder.longitude.getText().toString());
+                String streetName = holder.streetName.getText().toString();
+                String comment = holder.comments.getText().toString() == activity.getApplicationContext().getString(R.string.place_comment_intro) ? "" : holder.comments.getText().toString();
+                Intent sendIntent = new Intent();
+                sendIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "\"" + comment + "\" - " + streetName + ", (" + lat +", " + lng +")" );
+                sendIntent.setType("text/plain");
+                activity.getApplicationContext().startActivity(sendIntent);
+            }
+        });
+
+        holder.delete_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                LayoutInflater inflater = LayoutInflater.from(context);
+                final View dialogLayout = inflater.inflate(R.layout.dialog_place_deletion, null);
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                builder.setView(dialogLayout);
+
+                final AlertDialog customAlertDialog = builder.create();
+                customAlertDialog.show();
+
+                Button undo_btn = (Button) dialogLayout.findViewById(R.id.undo_btn);
+                undo_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        customAlertDialog.dismiss();
+                    }
+                });
+
+                Button confirm_btn = (Button) dialogLayout.findViewById(R.id.confirm_btn);
+                confirm_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RealmConfiguration realmConfig = new RealmConfiguration.Builder(context)
+                                .deleteRealmIfMigrationNeeded()
+                                .build();
+                        // Open the Realm for the UI thread.
+                        Realm realm = Realm.getInstance(realmConfig);
+                        realm.beginTransaction();
+                        Place selected = getData().get(position);
+                        selected.deleteFromRealm();
+                        realm.commitTransaction();
+                        customAlertDialog.dismiss();
+                        Toast.makeText(context, context.getString(R.string.place_deleted), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
         
@@ -130,8 +168,9 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
         TextView latlng;
         TextView savedDate;
         TextView comments;
-        ImageView icon;
+        ImageView icon, delete_btn;
         TextView latitude, longitude;
+        Button share_btn, nav_btn;
 
         PlacesViewHolder(View itemView) {
             super(itemView);
@@ -143,7 +182,9 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
             icon = (ImageView)itemView.findViewById(R.id.icon);
             latitude = (TextView) itemView.findViewById(R.id.latitude);
             longitude = (TextView) itemView.findViewById(R.id.longitude);
-
+            share_btn = (Button) itemView.findViewById(R.id.share_btn);
+            nav_btn  = (Button) itemView.findViewById(R.id.direction_btn);
+            delete_btn = (ImageView) itemView.findViewById(R.id.delete_btn);
         }
     }
 
