@@ -48,15 +48,31 @@ public class PlacesActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
     }
 
+     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.places_menu, menu);
+            for (int i = 0; i < menu.size(); i++) {
+                menu.getItem(i).setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+            }
+            return super.onCreateOptionsMenu(menu);
+        }
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        switch (menuItem.getItemId()) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.info_task:
+                Intent intent = new Intent(IntroActivity.this, InformationActivity.class);
+                startActivity(intent);
+                return true;
             case android.R.id.home:
                 Intent homeIntent = new Intent(this, IntroActivity.class);
                 homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(homeIntent);
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return (super.onOptionsItemSelected(menuItem));
     }
 
 }
