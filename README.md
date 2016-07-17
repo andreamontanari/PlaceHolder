@@ -3,8 +3,10 @@ Android app to save the locations you don't want to lose!
 
 Main Features:
   - Completely free
-  - Save last 5 locations you don't want to forget
+  - NO Login required
+  - Save all locations you don't want to forget
   - Navigate to a GPS position with Google Maps
+
 
 ### Version
 1.2
@@ -36,11 +38,10 @@ I would like to add these functionalities to PlaceHolder:
 ### Todos
 
  - Write Tests
- - New UI
- - Save both LAT, LNG and Google's human-readable address
  - Code refactoring
- - Add Share location Option
+ - Add Share location functionality
  - Add 2 Views for saved locations (List and Map with pins)
+ - Export all places and send them via email
 
 License
 ----
