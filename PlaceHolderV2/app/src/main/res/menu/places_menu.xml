@@ -1,5 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:placeholder="http://schemas.android.com/apk/res-auto">
+<<<<<<< HEAD
     <item android:id="@+id/map_view"
         android:title="@string/information_task"
         placeholder:showAsAction="always"
@@ -28,3 +29,11 @@
         android:visible="false"/>
     </group> -->
 </menu>
+=======
+
+    <item android:id="@+id/info_task"
+        android:title="@string/information_task"
+        placeholder:showAsAction="always"
+        android:icon="@drawable/common_full_open_on_phone" />
+</menu>
+>>>>>>> origin/master

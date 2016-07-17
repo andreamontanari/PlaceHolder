@@ -135,7 +135,7 @@ public class IntroActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
             MenuInflater inflater = getMenuInflater();
-            inflater.inflate(R.menu.menu, menu);
+            inflater.inflate(R.menu.intro_menu, menu);
             for (int i = 0; i < menu.size(); i++) {
                 menu.getItem(i).setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
             }

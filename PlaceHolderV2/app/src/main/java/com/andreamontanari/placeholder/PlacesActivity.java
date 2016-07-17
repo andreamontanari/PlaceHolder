@@ -52,6 +52,7 @@ public class PlacesActivity extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
     }
 
+<<<<<<< HEAD
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,10 +68,31 @@ public class PlacesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
+=======
+     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.places_menu, menu);
+            for (int i = 0; i < menu.size(); i++) {
+                menu.getItem(i).setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+            }
+            return super.onCreateOptionsMenu(menu);
+        }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.info_task:
+                Intent intent = new Intent(IntroActivity.this, InformationActivity.class);
+                startActivity(intent);
+                return true;
+>>>>>>> origin/master
             case android.R.id.home:
                 Intent homeIntent = new Intent(this, IntroActivity.class);
                 homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(homeIntent);
+<<<<<<< HEAD
             case R.id.list_view:
                 /*Fragment currentFragment = getFragmentManager().findFragmentByTag("FRAGMENT");
                 FragmentTransaction fragTransaction = getFragmentManager().beginTransaction();
@@ -94,6 +116,8 @@ public class PlacesActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.fragment_container, mapFragment).commit();
                 return true;
+=======
+>>>>>>> origin/master
             default:
                 return super.onOptionsItemSelected(item);
         }
