@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:placeholder="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/map_view"
+        android:title="@string/information_task"
+        placeholder:showAsAction="always"
+        android:icon="@mipmap/ic_map_white_24dp"
+        android:visible="false"/>
+    <item android:id="@+id/list_view"
+        android:title="@string/information_task"
+        placeholder:showAsAction="always"
+        android:icon="@mipmap/ic_format_list_bulleted_white_24dp"
+        android:visible="false"/>
+<!--
+    <group
+        android:id="@+id/map_menu_group">
+        <item android:id="@+id/map_view"
+            android:title="@string/information_task"
+            placeholder:showAsAction="always"
+            android:icon="@mipmap/ic_map_white_24dp" />
+    </group>
+
+    <group
+        android:id="@+id/list_menu_group">
+    <item android:id="@+id/list_view"
+        android:title="@string/information_task"
+        placeholder:showAsAction="always"
+        android:icon="@mipmap/ic_format_list_bulleted_white_24dp"
+        android:visible="false"/>
+    </group> -->
+</menu>

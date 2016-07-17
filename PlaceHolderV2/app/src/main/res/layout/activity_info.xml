@@ -14,14 +14,14 @@
         android:textColor="@color/colorPrimaryDark"
         android:layout_below="@+id/toolbar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="15dp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/devTeam"
         android:src="@mipmap/icon"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/introLabel"
         android:layout_centerHorizontal="true" />
 
@@ -34,7 +34,7 @@
         android:text="@string/designed_by"
         android:layout_below="@+id/devTeam"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:id="@+id/supportLabel"
@@ -45,13 +45,13 @@
         android:text="@string/follow_label"
         android:layout_below="@+id/designer_lbl"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="30dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/socialBtns"
         android:layout_below="@id/supportLabel">
 
@@ -78,7 +78,6 @@
         android:id="@+id/contact_btn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:text="@string/contact_btn_label"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorWhite"
@@ -101,10 +100,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="12sp"
-        android:text="@string/placeholder_link"
-        android:autoLink="web"
-        android:clickable="true"
-        android:linksClickable="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15dp"/>

@@ -12,6 +12,8 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -40,6 +42,9 @@ public class PlacesOnListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setHasOptionsMenu(true);
+
         View rootView = inflater.inflate(R.layout.fragment_list_places, container, false);
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.rv);
@@ -80,9 +85,14 @@ public class PlacesOnListFragment extends Fragment {
         realm.close();
     }
 
-
-
-
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        MenuItem item = menu.findItem(R.id.map_view);
+        item.setVisible(true);
+        MenuItem hide_item = menu.findItem(R.id.list_view);
+        hide_item.setVisible(false);
+        super.onPrepareOptionsMenu(menu);
+    }
 }
 
 

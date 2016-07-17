@@ -36,4 +36,5 @@
     <string name="reset_successful">Tutte le posizioni eliminate!</string>
     <string name="mail_object">Richiesta PlaceHolder</string>
     <string name="mail_error">Errore nel preparare la mail, riprova!</string>
+    <string name="copied_place">Posizione copiata!</string>
 </resources>

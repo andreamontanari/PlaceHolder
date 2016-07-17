@@ -9,10 +9,13 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.andreamontanari.placeholder.utils.GPSTracker;
@@ -39,6 +42,20 @@ public class InformationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_info);
 
         setToolBar();
+
+        TextView linklabel = (TextView) findViewById(R.id.linkLabel);
+
+        SpannableString mobile_underline = new SpannableString("placeholder.it");
+        mobile_underline.setSpan(new UnderlineSpan(), 0, "placeholder.it".length(), 0);
+        linklabel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(getResources().getString(R.string.web_url)));
+                startActivity(intent);
+            }
+        }
+        );
     }
 
 
@@ -46,7 +63,7 @@ public class InformationActivity extends AppCompatActivity {
         Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(tb);
         ActionBar ab = getSupportActionBar();
-        ab.setDisplayHomeAsUpEnabled(false);
+        ab.setDisplayHomeAsUpEnabled(true);
     }
 
     public void eraseAll(View view) {
@@ -89,4 +106,16 @@ public class InformationActivity extends AppCompatActivity {
             Toast.makeText(InformationActivity.this,  R.string.mail_error, Toast.LENGTH_SHORT).show();
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case android.R.id.home:
+                Intent homeIntent = new Intent(this, IntroActivity.class);
+                homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(homeIntent);
+        }
+        return (super.onOptionsItemSelected(menuItem));
+    }
+
 }

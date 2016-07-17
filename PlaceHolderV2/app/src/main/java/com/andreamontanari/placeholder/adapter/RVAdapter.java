@@ -4,6 +4,8 @@ package com.andreamontanari.placeholder.adapter;
  * Created by andreamontanari on 08/07/16.
  */
 
+        import android.content.ClipData;
+        import android.content.ClipboardManager;
         import android.content.Context;
         import android.content.DialogInterface;
         import android.content.Intent;
@@ -72,6 +74,20 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
         else {
             holder.comments.setText(getData().get(position).getPlaceComment());
         }
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                double lat = Double.parseDouble(holder.latitude.getText().toString());
+                double lng = Double.parseDouble(holder.longitude.getText().toString());
+                String streetName = holder.streetName.getText().toString();
+                ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("label", streetName + ", (" + lat +", " + lng +")" );
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(context, context.getResources().getString(R.string.copied_place), Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
 
         holder.comments.setOnClickListener(new View.OnClickListener() {
             @Override
