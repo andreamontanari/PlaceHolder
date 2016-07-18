@@ -6,6 +6,7 @@ Main Features:
   - NO Login required
   - Save all locations you don't want to forget
   - Navigate to a GPS position with Google Maps
+  - Two-Views mode for saved locations (List and Map)
 
 
 ### Version
@@ -40,7 +41,6 @@ I would like to add these functionalities to PlaceHolder:
  - Write Tests
  - Code refactoring
  - Add Share location functionality
- - Add 2 Views for saved locations (List and Map with pins)
  - Export all places and send them via email
 
 License
