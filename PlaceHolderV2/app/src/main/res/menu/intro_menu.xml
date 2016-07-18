@@ -4,10 +4,6 @@
     <item android:id="@+id/info_task"
         android:title="@string/information_task"
         placeholder:showAsAction="always"
-<<<<<<< HEAD:PlaceHolderV2/app/src/main/res/menu/menu.xml
         android:icon="@mipmap/ic_info_white_24dp" />
 </menu>
-=======
-        android:icon="@drawable/common_full_open_on_phone" />
-</menu>
->>>>>>> origin/master:PlaceHolderV2/app/src/main/res/menu/intro_menu.xml
+

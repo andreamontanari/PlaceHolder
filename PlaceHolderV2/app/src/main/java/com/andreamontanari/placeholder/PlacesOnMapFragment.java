@@ -8,6 +8,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 import com.andreamontanari.placeholder.adapter.RVAdapter;
 import com.andreamontanari.placeholder.utils.GPSTracker;
+import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -35,7 +37,7 @@ import io.realm.RealmConfiguration;
 import io.realm.RealmResults;
 import io.realm.Sort;
 
-public class PlacesOnMapFragment extends Fragment implements OnMapReadyCallback {
+public class PlacesOnMapFragment extends Fragment {
 
 
     private Realm realm;
@@ -45,7 +47,9 @@ public class PlacesOnMapFragment extends Fragment implements OnMapReadyCallback 
     private LatLng latlng;
     private double latitude, longitude;
     private String streetName;
-    private final int ZOOM_LEVEL = 12;
+    private final int ZOOM_LEVEL = 8;
+
+    private SupportMapFragment mSupportMapFragment;
 
     public PlacesOnMapFragment(){}
 
@@ -58,61 +62,76 @@ public class PlacesOnMapFragment extends Fragment implements OnMapReadyCallback 
 
         View rootView = inflater.inflate(R.layout.fragment_map_places, container, false);
 
-        return rootView;
+        mSupportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        if (mSupportMapFragment == null) {
+            FragmentManager fragmentManager = getFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            mSupportMapFragment = SupportMapFragment.newInstance();
+            fragmentTransaction.replace(R.id.map, mSupportMapFragment).commit();
+        }
+
+        if (mSupportMapFragment != null) {
+            mSupportMapFragment.getMapAsync(new OnMapReadyCallback() {
+                @Override
+                public void onMapReady(GoogleMap googleMap) throws SecurityException {
+                    if (googleMap != null) {
+
+                        mMap = googleMap;
+
+                        mMap.setMyLocationEnabled(true);
+                        // Add a marker in Sydney, Australia, and move the camera.
+                        gps = new GPSTracker(getContext());
+                        if (gps.canGetLocation()) {
+                            //retrieve coordinates
+                            latitude = gps.getLatitude();
+                            longitude = gps.getLongitude();
+                            latlng = new LatLng(latitude, longitude);
+                            //zoom in the map by level 16
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng, ZOOM_LEVEL));
+                        }
+
+                        final Context context = getActivity().getApplicationContext();
+
+                        RealmConfiguration realmConfig = new RealmConfiguration.Builder(context)
+                                .deleteRealmIfMigrationNeeded()
+                                .build();
+
+                        // load map
+                        // Open the Realm for the UI thread.
+                        realm = Realm.getInstance(realmConfig);
+
+                        RealmResults<Place> places = realm.where(Place.class)
+                                .findAll(); // will place function to load saved places
+
+                        if (places != null && places.size() > 0) {
+
+                            // load markers in map
+                            for (Place place : places) {
+                                latlng = new LatLng(place.getLatitude(), place.getLongitude());
+
+                                mMap.addMarker(new MarkerOptions()
+                                        .position(latlng)
+                                        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_add_location_white_48dp))
+                                        .title(place.getPlaceComment() + " - " + place.getStreetName()));
+                            }
+                        } else {
+                            Toast.makeText(getContext(), getResources().getString(R.string.list_no_places), Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+
+                }
+            });
+
+        }
+            return rootView;
+
     }
 
     @Override
     public void onStart() {
 
         super.onStart();
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) throws SecurityException {
-        mMap = googleMap;
-
-        mMap.setMyLocationEnabled(true);
-        // Add a marker in Sydney, Australia, and move the camera.
-        gps = new GPSTracker(getContext());
-        if(gps.canGetLocation()) {
-            //retrieve coordinates
-            latitude = gps.getLatitude();
-            longitude = gps.getLongitude();
-            latlng = new LatLng(latitude, longitude);
-            //zoom in the map by level 16
-            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latlng, ZOOM_LEVEL));
-        }
-
-        final Context context = getActivity().getApplicationContext();
-
-        RealmConfiguration realmConfig = new RealmConfiguration.Builder(context)
-                .deleteRealmIfMigrationNeeded()
-                .build();
-
-        // load map
-        // Open the Realm for the UI thread.
-        realm = Realm.getInstance(realmConfig);
-
-        RealmResults<Place> places = realm.where(Place.class)
-                .findAll(); // will place function to load saved places
-
-        Log.d("TEST",places.toString());
-
-        if (places != null && places.size() > 0) {
-
-            // load markers in map
-            for (Place place : places) {
-                Log.d("TEST",place.toString());
-                latlng = new LatLng(place.getLatitude(), place.getLongitude());
-
-                mMap.addMarker(new MarkerOptions()
-                        .position(latlng)
-                        .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_add_location_white_48dp))
-                        .title(place.getPlaceComment() + " - " + place.getStreetName()));
-            }
-        } else {
-            Toast.makeText(getContext(), getResources().getString(R.string.list_no_places), Toast.LENGTH_SHORT).show();
-        }
     }
 
 
@@ -124,6 +143,8 @@ public class PlacesOnMapFragment extends Fragment implements OnMapReadyCallback 
         hide_item.setVisible(false);
         super.onPrepareOptionsMenu(menu);
     }
+
+
 }
 
 

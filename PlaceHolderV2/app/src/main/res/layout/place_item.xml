@@ -84,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:paddingBottom="5dp"
+                android:text="Via dei Crollalanza 6A, Milano, IT"
                 android:textColor="@color/colorWhite"
                 android:textStyle="bold"
                 android:textSize="18sp" />
@@ -92,6 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/latlng"
+                android:text="45.111111, 9.1111777"
                 android:textColor="@color/colorWhite"
                 />
 
@@ -99,14 +101,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/latitude"
-                android:visibility="invisible"
+                android:visibility="gone"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/longitude"
-                android:visibility="invisible"
+                android:visibility="gone"
                 />
 
 
@@ -125,6 +127,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/comments"
             android:textStyle="italic"
+            android:paddingLeft="5dp"
             android:textColor="@color/colorPrimaryDark"
             />
             <RelativeLayout

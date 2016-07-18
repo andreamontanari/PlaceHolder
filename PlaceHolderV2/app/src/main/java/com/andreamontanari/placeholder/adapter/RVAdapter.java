@@ -72,7 +72,7 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
             holder.comments.setText(context.getString(R.string.place_comment_intro));
         }
         else {
-            holder.comments.setText(getData().get(position).getPlaceComment());
+            holder.comments.setText("\"" + getData().get(position).getPlaceComment() + "\"");
         }
 
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -116,12 +116,36 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
                 double lng = Double.parseDouble(holder.longitude.getText().toString());
                 String streetName = holder.streetName.getText().toString();
                 String comment = holder.comments.getText().toString() == activity.getApplicationContext().getString(R.string.place_comment_intro) ? "" : holder.comments.getText().toString();
-                Intent sendIntent = new Intent();
+
+
+
+                /*Intent sendIntent = new Intent();
                 sendIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "\"" + comment + "\" - " + streetName + ", (" + lat +", " + lng +")" );
                 sendIntent.setType("text/plain");
-                activity.getApplicationContext().startActivity(sendIntent);
+                activity.getApplicationContext().startActivity(sendIntent);*/
+
+                LayoutInflater inflater = LayoutInflater.from(context);
+                final View dialogLayout = inflater.inflate(R.layout.dialog_social_share, null);
+
+                TextView tv_lat = (TextView) dialogLayout.findViewById(R.id.lat);
+                TextView tv_lng = (TextView) dialogLayout.findViewById(R.id.lng);
+                TextView tv_cmnt = (TextView) dialogLayout.findViewById(R.id.comment);
+                TextView tv_street = (TextView) dialogLayout.findViewById(R.id.streetName);
+
+                tv_lat.setText(Double.toString(lat));
+                tv_lng.setText(Double.toString(lng));
+                tv_cmnt.setText(comment);
+                tv_street.setText(streetName);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                builder.setView(dialogLayout);
+
+                final AlertDialog customAlertDialog = builder.create();
+                customAlertDialog.show();
+
             }
         });
 

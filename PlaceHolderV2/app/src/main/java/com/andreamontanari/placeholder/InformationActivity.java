@@ -7,14 +7,17 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +32,9 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 
 /**
  * Created by andreamontanari on 13/07/16.
@@ -67,7 +73,33 @@ public class InformationActivity extends AppCompatActivity {
     }
 
     public void eraseAll(View view) {
-        PlaceMisc.deleteAllPlaces(getApplicationContext());
+
+        LayoutInflater inflater = LayoutInflater.from(this);
+        final View dialogLayout = inflater.inflate(R.layout.dialog_place_deletion, null);
+        ((TextView) dialogLayout.findViewById(R.id.deletion_body)).setText(getResources().getString(R.string.ask_erase_all));
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setView(dialogLayout);
+
+        final AlertDialog customAlertDialog = builder.create();
+        customAlertDialog.show();
+
+        Button undo_btn = (Button) dialogLayout.findViewById(R.id.undo_btn);
+        undo_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                customAlertDialog.dismiss();
+            }
+        });
+
+        Button confirm_btn = (Button) dialogLayout.findViewById(R.id.confirm_btn);
+        confirm_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PlaceMisc.deleteAllPlaces(getApplicationContext());
+                customAlertDialog.dismiss();
+            }
+        });
     }
 
     public void visitFacebook(View v) {
@@ -79,7 +111,7 @@ public class InformationActivity extends AppCompatActivity {
                 Uri uri = Uri.parse("fb://facewebmodal/f?href=" + facebookUrl);
                 startActivity(new Intent(Intent.ACTION_VIEW, uri));;
             } else {
-                // open the Facebook app using the old method (fb://profile/id or fb://page/id)
+                // open the Facebook app using the old method (fb://profile/id or fb://page/id)mi
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.facebook_codepage))));
             }
         } catch (PackageManager.NameNotFoundException e) {

@@ -37,4 +37,5 @@
     <string name="mail_object">Richiesta PlaceHolder</string>
     <string name="mail_error">Errore nel preparare la mail, riprova!</string>
     <string name="copied_place">Posizione copiata!</string>
+    <string name="ask_erase_all">Vuoi davvero eliminare tutte le posizione salvate?</string>
 </resources>
