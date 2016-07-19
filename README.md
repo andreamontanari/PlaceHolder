@@ -43,6 +43,7 @@ I would like to add these functionalities to PlaceHolder:
  - Code refactoring
  - Add Image to place
  - Export all places and send them via email
+ - Add tutorial to first-time use
 
 License
 ----
