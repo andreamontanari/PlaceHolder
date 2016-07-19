@@ -12,7 +12,7 @@
     <string name="permission_coarse_location">Coarse location</string>
     <string name="permission_fine_location">Fine location</string>
     <string name="permission_write_ext_storage">Write external storage</string>
-    <string name="google_maps_api_key" translatable="false">AIzaSyDndS5nQ9E1Sm8Dl_4Gg7RuI5QWf57jsPk</string>
+    <string name="google_maps_api_key" translatable="false">AIzaSyDkNltfvd6NY7nv7DPU7L8Z2z6oYh4K7J0</string>
     <string name="gps_settings_error">Error: please try again!</string>
     <string name="list_no_places">There are no places saved!</string>
     <string name="share_btn_label">Share</string>
@@ -45,4 +45,7 @@
     <string name="facebook_app_id" translatable="false">523336767867452</string>
     <string translatable="false" name="tw_consumer_key">CtmrPNZEJsI3SBWLUYyOst8fn</string>
     <string translatable="false" name="tw_consumer_secret">d3NuiotXzQwFxTHl4e26dB7yXJJIw6u49CW63c1q9vD1bw1hJ8</string>
+    <string name="twitter_not_installed">Twitter App not present!</string>
+    <string name="social_share_title">Choose where to post</string>
+    <string name="splash_text">Your Places, secured!</string>
 </resources>

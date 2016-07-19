@@ -9,8 +9,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Choose where to post"
+        android:text="@string/social_share_title"
         android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
         android:textSize="@dimen/abc_text_size_menu_material"
         android:gravity="center"
         />
@@ -20,8 +21,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="50dp"
-        android:id="@+id/socialBtns"
-        android:layout_below="@id/supportLabel">
+        android:id="@+id/socialBtns">
 
         <CheckBox
             android:id="@+id/fbChk"
