@@ -12,7 +12,7 @@
     <string name="permission_coarse_location">Coarse location</string>
     <string name="permission_fine_location">Fine location</string>
     <string name="permission_write_ext_storage">Write external storage</string>
-    <string name="google_maps_api_key" translatable="false">AIzaSyCCWi3VtBmqh54W7SyitD8ct2_fEpkmbWo</string>
+    <string name="google_maps_api_key" translatable="false">AIzaSyCCWi3VtBmqh54W7SyitD8ct2_fEpkmbWo</string> <!-- DEBUG ON, REL: AIzaSyCCWi3VtBmqh54W7SyitD8ct2_fEpkmbWo -->
     <string name="gps_settings_error">Error: please try again!</string>
     <string name="list_no_places">There are no places saved!</string>
     <string name="share_btn_label">Share</string>

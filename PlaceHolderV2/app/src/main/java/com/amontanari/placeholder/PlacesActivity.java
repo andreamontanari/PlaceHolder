@@ -101,7 +101,7 @@ public class PlacesActivity extends AppCompatActivity {
                 listFragment.setArguments(getIntent().getExtras());
                 // Add the fragment to the 'fragment_container' FrameLayout
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.fragment_container, listFragment).commit();
+                        .replace(R.id.fragment_container, listFragment).commit();
                 return true;
             case R.id.map_view:
                 // Create a new Fragment to be placed in the activity layout
@@ -111,7 +111,7 @@ public class PlacesActivity extends AppCompatActivity {
                 mapFragment.setArguments(getIntent().getExtras());
                 // Add the fragment to the 'fragment_container' FrameLayout
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.fragment_container, mapFragment).commit();
+                        .replace(R.id.fragment_container, mapFragment).commit();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
