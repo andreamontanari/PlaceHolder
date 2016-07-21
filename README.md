@@ -8,6 +8,7 @@ Main Features:
   - Navigate to a GPS position with Google Maps
   - Two-Views mode for saved locations (List and Map)
   - Added Share location functionality (Facebook & Twitter)
+  - 3 available languages: English, Italian and Spanish (French coming soon)
 
 
 ### Version
