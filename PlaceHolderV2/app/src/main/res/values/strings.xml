@@ -48,4 +48,6 @@
     <string name="twitter_not_installed">Twitter App not present!</string>
     <string name="social_share_title">Choose where to post</string>
     <string name="splash_text">Your Places, secured!</string>
+    <string name="error_gps_generic">Error on getting your position, try again!</string>
+    <string name="error_maps_not_found">Google Maps App not found, please install it!</string>
 </resources>

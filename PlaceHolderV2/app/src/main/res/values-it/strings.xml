@@ -41,4 +41,6 @@
     <string name="twitter_not_installed">App Twitter non installata!</string>
     <string name="social_share_title">Scegli dove condividere</string>
     <string name="splash_text">I tuoi posti, al sicuro!</string>
+    <string name="error_gps_generic">Errore nel trovare la tua posizione, riprovare!</string>
+    <string name="error_maps_not_found">Applicazione Google Maps non trovata, scaricala!</string>
 </resources>

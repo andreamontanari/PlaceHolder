@@ -162,41 +162,6 @@ public class GPSTracker extends Service implements LocationListener {
         return this.canGetLocation;
     }
 
-    /**
-     * Function to show settings alert dialog
-     * On pressing Settings button will launch Settings Options
-     * */
-    public void showSettingsAlert(){
-
-        /*
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(mContext);
-
-        // Setting Dialog Title
-        alertDialog.setTitle(R.string.title);
-
-        // Setting Dialog Message
-        alertDialog.setMessage(R.string.gpsmess);
-
-        // On pressing Settings button
-        alertDialog.setPositiveButton(R.string.sett, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog,int which) {
-                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                mContext.startActivity(intent);
-            }
-        });
-
-        // on pressing cancel button
-        alertDialog.setNegativeButton(R.string.canc, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-
-        // Showing Alert Message
-        alertDialog.show();
-        */
-    }
-
     @Override
     public void onLocationChanged(Location location) {
 

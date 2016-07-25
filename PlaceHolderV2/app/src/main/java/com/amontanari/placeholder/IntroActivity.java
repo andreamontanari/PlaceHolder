@@ -57,10 +57,8 @@ public class IntroActivity extends AppCompatActivity {
             // show walkthrough --> then set toolbar
             // initialise Realm.io
             prefs.edit().putBoolean("firstrun", false).apply();
-            setToolBar();
-        } else {
-            setToolBar();
         }
+        setToolBar();
     }
 
     public void watchPlaces(View view) {
@@ -120,12 +118,12 @@ public class IntroActivity extends AppCompatActivity {
                             status.startResolutionForResult(IntroActivity.this, REQUEST_CHECK_SETTINGS);
                         } catch (IntentSender.SendIntentException e) {
                             // PendingIntent unable to execute request
-                            Toast.makeText(IntroActivity.this, "ERROR, please try again", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(IntroActivity.this, getResources().getString(R.string.error_gps_generic), Toast.LENGTH_SHORT).show();
                         }
                         break;
                     case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
                         //Location settings are inadequate, and cannot be fixed here. Dialog not created
-                        Toast.makeText(IntroActivity.this, "ERROR, please try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(IntroActivity.this, getResources().getString(R.string.error_gps_generic), Toast.LENGTH_SHORT).show();
                         break;
                 }
             }

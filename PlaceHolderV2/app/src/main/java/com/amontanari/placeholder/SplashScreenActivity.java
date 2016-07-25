@@ -35,7 +35,6 @@ public class SplashScreenActivity extends AppCompatActivity {
             askForPermissions();
         } else {
             startApp();
-
         }
     }
 

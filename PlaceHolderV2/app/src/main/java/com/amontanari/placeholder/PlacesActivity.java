@@ -177,7 +177,6 @@ public class PlacesActivity extends AppCompatActivity {
         try {
             return URLEncoder.encode(s, "UTF-8");
         }catch (UnsupportedEncodingException e) {
-            Log.wtf("ERROR", "UTF-8 should always be supported", e);
             return "";
         }
     }

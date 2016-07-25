@@ -79,7 +79,7 @@ public class PlaceMisc {
         });
 
     }
-    
+    /* method to delete all stored places */
     public static void deleteAllPlaces(Context context) {
         
         // Create the Realm configuration
@@ -98,7 +98,8 @@ public class PlaceMisc {
 
         Toast.makeText(context, context.getString(R.string.reset_successful), Toast.LENGTH_SHORT).show();
     }
-    
+
+    /* method to open google Maps and receive directions to a Place */
     public static void getDirections(double latitude, double longitude, Context context) {
 
         String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?daddr=%f,%f", latitude, longitude);
@@ -119,7 +120,8 @@ public class PlaceMisc {
             }
             catch(ActivityNotFoundException innerEx)
             {
-                Toast.makeText(context, "Please install a maps application", Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(context, context.getResources().getString(R.string.error_maps_not_found), Toast.LENGTH_SHORT).show();
             }
         }
     }
