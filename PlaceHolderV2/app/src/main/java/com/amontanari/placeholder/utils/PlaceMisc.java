@@ -77,7 +77,7 @@ public class PlaceMisc {
                 Toast.makeText(context, context.getString(R.string.place_comment_added), Toast.LENGTH_SHORT).show();
             }
         });
-
+        
     }
     /* method to delete all stored places */
     public static void deleteAllPlaces(Context context) {

@@ -19,7 +19,7 @@
     <string name="directions_btn_label">Directions</string>
     <string name="address_not_found">Address not found</string>
     <string name="place_text_hint">Your note</string>
-    <string name="place_comment_intro">Write a custom message and attach it to the saved place!</string>
+    <string name="place_comment_intro">Write a custom note for the saved place</string>
     <string name="form_add">Save</string>
     <string name="place_saved">The place has been saved correctly</string>
     <string name="place_comment_added">Note added to the last place</string>

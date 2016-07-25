@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.os.Bundle;
@@ -129,11 +130,57 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void addNotePlace(View v) {
 
-        PlaceMisc.storePlaceNote("", latitude, longitude, this);
+        final Context context = this;
+        // Create the Realm configuration
+        RealmConfiguration realmConfig = new RealmConfiguration.Builder(context)
+                .deleteRealmIfMigrationNeeded()
+                .build();
+        // Open the Realm for the UI thread.
+        realm = Realm.getInstance(realmConfig);
 
-        FloatingActionButton add_note_btn = (FloatingActionButton) findViewById(R.id.add_note_fab);
-        add_note_btn.setVisibility(View.GONE);
-        mMap.clear();
+        LayoutInflater inflater = LayoutInflater.from(context);
+        final View dialogLayout = inflater.inflate(R.layout.dialog_place_comment, null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+        final EditText etNote = (EditText) dialogLayout.findViewById(R.id.place_text);
+        if("" != context.getString(R.string.place_comment_intro)) {
+            etNote.setText("");
+        }
+
+        builder.setView(dialogLayout);
+
+        final AlertDialog customAlertDialog = builder.create();
+        customAlertDialog.show();
+
+        Button undo_btn = (Button) dialogLayout.findViewById(R.id.undo_btn);
+        undo_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                customAlertDialog.dismiss();
+            }
+        });
+
+        Button post_btn = (Button) dialogLayout.findViewById(R.id.post_btn);
+        post_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // get last saved Place
+                Place lastSaved = realm.where(Place.class)
+                        .equalTo("latitude", latitude)
+                        .equalTo("longitude", longitude).findFirst();
+
+                realm.beginTransaction();
+                lastSaved.setPlaceComment(etNote.getText().toString());
+                realm.commitTransaction();
+
+                FloatingActionButton add_note_btn = (FloatingActionButton) findViewById(R.id.add_note_fab);
+                add_note_btn.setVisibility(View.GONE);
+                mMap.clear();
+
+                customAlertDialog.dismiss();
+                Toast.makeText(context, context.getString(R.string.place_comment_added), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     
     public void storePlace(double latitude, double longitude, String streetName) {
@@ -151,7 +198,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         place.setLongitude(longitude);
         place.setStreetName(streetName);
         place.setSavedOn();
-        place.setPlaceComment(getString(R.string.place_comment_intro));
+        place.setPlaceComment("");
         realm.commitTransaction();
     }
 

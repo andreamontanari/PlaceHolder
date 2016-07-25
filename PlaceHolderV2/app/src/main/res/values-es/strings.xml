@@ -8,13 +8,13 @@
     <string name="maps_title">Guardar su posición</string>
     <string name="places_title">Sus posiciones</string>
     <string name="form_cancel">Cancelar</string>
-    <string name="permissions_missing">Hay algunos permisos que faltan!</string>
+    <string name="permissions_missing">¡Hay algunos permisos que faltan!</string>
     <string name="permission_phrase">Por favor, deje que:</string>
     <string name="permission_coarse_location">Localización gruesa</string>
     <string name="permission_fine_location">Location precisa</string>
     <string name="permission_write_ext_storage">Escribir almacenamiento externo</string>
     <string name="gps_settings_error">Error: por favor, inténtelo de nuevo</string>
-    <string name="list_no_places">No hay lugares guardados!</string>
+    <string name="list_no_places">¡No hay lugares guardados!</string>
     <string name="share_btn_label">Compartir</string>
     <string name="directions_btn_label">Direcciòn</string>
     <string name="address_not_found">Direcciòn no encontrado</string>
@@ -33,14 +33,14 @@
     <string name="erase_btn_label">Borrar todos</string>
     <string name="contact_btn_label">Escribenos</string>
     <string name="designed_by">Logo diseñado por @gabrielebiancat</string>
-    <string name="reset_successful">Todos los lugares han sido eliminados!</string>
+    <string name="reset_successful">¡Todos los lugares han sido eliminados!</string>
     <string name="mail_object">PlaceHolder demanda</string>
-    <string name="mail_error">Error en la preparación del correo, inténtelo de nuevo!</string>
+    <string name="mail_error">¡Error en la preparación del correo, inténtelo de nuevo!</string>
     <string name="copied_place">Coloque copiado!</string>
     <string name="ask_erase_all">¿Realmente desea eliminar todos los lugares guardados?</string>
-    <string name="twitter_not_installed">Twitter App no presente!</string>
+    <string name="twitter_not_installed">¡Twitter App no presente!</string>
     <string name="social_share_title">Elegir el lugar para compartir</string>
-    <string name="splash_text">Sus Posiciones, seguras</string>
-    <string name="error_gps_generic">Error en conseguir su posición, vuelve a intentarlo!</string>
-    <string name="error_maps_not_found">Google Maps App no encontrada, por favor instalarla!</string>
+    <string name="splash_text">¡Sus Posiciones, seguras!</string>
+    <string name="error_gps_generic">¡Error en conseguir su posición, vuelve a intentarlo!</string>
+    <string name="error_maps_not_found">¡Google Maps App no encontrada, por favor instalarla!</string>
 </resources>

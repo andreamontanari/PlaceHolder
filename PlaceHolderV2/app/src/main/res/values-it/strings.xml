@@ -19,7 +19,7 @@
     <string name="directions_btn_label">Navigaci</string>
     <string name="address_not_found">Indirizzo non trovato</string>
     <string name="place_text_hint">La tua nota</string>
-    <string name="place_comment_intro">Scrivi un commento personalizzato da aggiungere alla tua posizione!</string>
+    <string name="place_comment_intro">Scrivi un commento per la posizione salvata</string>
     <string name="form_add">Salva</string>
     <string name="place_saved">La posizione è stata salvata correttamente</string>
     <string name="place_comment_added">Commento aggiunto alla posizione</string>

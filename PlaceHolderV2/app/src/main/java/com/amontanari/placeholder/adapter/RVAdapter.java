@@ -7,20 +7,13 @@ package com.amontanari.placeholder.adapter;
         import android.content.ClipData;
         import android.content.ClipboardManager;
         import android.content.Context;
-        import android.content.DialogInterface;
-        import android.content.Intent;
-        import android.graphics.Color;
-        import android.support.annotation.NonNull;
-        import android.support.annotation.Nullable;
         import android.support.v7.app.AlertDialog;
         import android.support.v7.widget.CardView;
         import android.support.v7.widget.RecyclerView;
-        import android.util.Log;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.Button;
-        import android.widget.EditText;
         import android.widget.ImageView;
         import android.widget.TextView;
         import android.widget.Toast;
@@ -30,9 +23,6 @@ package com.amontanari.placeholder.adapter;
         import com.amontanari.placeholder.PlacesActivity;
         import com.amontanari.placeholder.R;
         import com.amontanari.placeholder.utils.PlaceMisc;
-        import com.google.android.gms.vision.text.Text;
-
-        import java.util.List;
 
         import io.realm.OrderedRealmCollection;
         import io.realm.Realm;
@@ -68,8 +58,10 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
         holder.latlng.setText(getData().get(position).getLatLng());
         holder.latitude.setText(Double.toString(getData().get(position).getLatitude()));
         holder.longitude.setText(Double.toString(getData().get(position).getLongitude()));
-        if (getData().get(position).getPlaceComment() == "" || getData().get(position).getPlaceComment() == null) {
-            holder.comments.setText(context.getString(R.string.place_comment_intro));
+        if (getData().get(position).getPlaceComment().length() == 0 ||
+                getData().get(position).getPlaceComment() == "" ||
+                getData().get(position).getPlaceComment() == null) {
+            holder.comments.setText("\"" +  context.getString(R.string.place_comment_intro) + "\"");
         }
         else {
             holder.comments.setText("\"" + getData().get(position).getPlaceComment() + "\"");
