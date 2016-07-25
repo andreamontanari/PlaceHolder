@@ -118,7 +118,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             mMap.addMarker(new MarkerOptions()
                     .position(latlng)
                     .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_add_location_white_48dp))
-                    .title("Last saved place!"));
+                    .title("PlaceHolder!"));
             streetName = getAddress(latitude, longitude);
             storePlace(latitude, longitude, streetName);
         }
