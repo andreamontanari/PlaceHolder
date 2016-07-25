@@ -124,7 +124,7 @@ public class InformationActivity extends AppCompatActivity {
     public void visitWebsite(View v) {
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(getResources().getString(R.string.facebook_page)));
+        intent.setData(Uri.parse(getResources().getString(R.string.web_url)));
         startActivity(intent);
     }
 

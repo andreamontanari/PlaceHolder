@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PlaceHolder</string>
+    <string name="intro_title">Bienvenido a PlaceHolder</string>
+    <string name="intro_text">Precisar su ubicación o ver los salvados</string>
+    <string name="intro_places_btn">Sus posiciones</string>
+    <string name="intro_save_place_btn">Guardar la ubicación</string>
+    <string name="maps_title">Guardar su posición</string>
+    <string name="places_title">Sus posiciones</string>
+    <string name="form_cancel">Cancelar</string>
+    <string name="permissions_missing">Hay algunos permisos que faltan!</string>
+    <string name="permission_phrase">Por favor, deje que:</string>
+    <string name="permission_coarse_location">Localización gruesa</string>
+    <string name="permission_fine_location">Location precisa</string>
+    <string name="permission_write_ext_storage">Escribir almacenamiento externo</string>
+    <string name="gps_settings_error">Error: por favor, inténtelo de nuevo</string>
+    <string name="list_no_places">No hay lugares guardados!</string>
+    <string name="share_btn_label">Compartir</string>
+    <string name="directions_btn_label">Direcciòn</string>
+    <string name="address_not_found">Direcciòn no encontrado</string>
+    <string name="place_text_hint">Su comentario</string>
+    <string name="place_comment_intro">Añadir nuevo comentario</string>
+    <string name="form_add">Guardar</string>
+    <string name="place_saved">El lugar se ha guardado correctamente</string>
+    <string name="place_comment_added">Nota añadida a la última posición</string>
+    <string name="place_delete_text">¿De verdad quiere eliminar este lugar?</string>
+    <string name="confirm_btn">Confirmar</string>
+    <string name="place_deleted">El lugar ha sido eliminado correctamente</string>
+    <string name="information_task">Informaciòn</string>
+    <string name="info_title">App Informaciòn</string>
+    <string name="developed_label">Aplicación creada por @ndreamontanari</string>
+    <string name="follow_label">Apoya PlaceHolder</string>
+    <string name="erase_btn_label">Borrar todos</string>
+    <string name="contact_btn_label">Escribenos</string>
+    <string name="designed_by">Logo diseñado por @gabrielebiancat</string>
+    <string name="reset_successful">Todos los lugares han sido eliminados!</string>
+    <string name="mail_object">PlaceHolder demanda</string>
+    <string name="mail_error">Error en la preparación del correo, inténtelo de nuevo!</string>
+    <string name="copied_place">Coloque copiado!</string>
+    <string name="ask_erase_all">¿Realmente desea eliminar todos los lugares guardados?</string>
+    <string name="twitter_not_installed">Twitter App no presente!</string>
+    <string name="social_share_title">Elegir el lugar para compartir</string>
+    <string name="splash_text">Sus Posiciones, seguras</string>
+</resources>

@@ -55,7 +55,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private String streetName;
     private final int ZOOM_LEVEL = 15;
 
-
     static List<Address> addresses;
     
     private Realm realm;

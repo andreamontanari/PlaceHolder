@@ -92,10 +92,10 @@ public class RVAdapter extends RealmRecyclerViewAdapter<Place, RVAdapter.PlacesV
         holder.comments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView tv = (TextView) v.findViewById(R.id.comments);
+                //TextView tv = (TextView) v.findViewById(R.id.comments);
                 double lat = Double.parseDouble(holder.latitude.getText().toString());
                 double lng = Double.parseDouble(holder.longitude.getText().toString());
-                String commentPlace = tv.getText().toString();
+                String commentPlace = getData().get(position).getPlaceComment();
                 PlaceMisc.storePlaceNote(commentPlace, lat, lng,  context);
             }
         });

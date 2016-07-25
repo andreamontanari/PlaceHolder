@@ -28,11 +28,11 @@
     <string name="place_deleted">La posizione è stata cancellata correttamente</string>
     <string name="information_task">Informazioni</string>
     <string name="info_title">Informazioni</string>
-    <string name="developed_label">Sviluppata da Andrea Montanari</string>
+    <string name="developed_label">Sviluppata da @ndreamontanari</string>
     <string name="follow_label">Sostieni PlaceHolder</string>
     <string name="erase_btn_label">Cancella tutto</string>
     <string name="contact_btn_label">Contatta sviluppatore</string>
-    <string name="designed_by">Logo realizzato da Gabriele Biancat</string>
+    <string name="designed_by">Logo realizzato da @gabrielebiancat</string>
     <string name="reset_successful">Tutte le posizioni eliminate!</string>
     <string name="mail_object">Richiesta PlaceHolder</string>
     <string name="mail_error">Errore nel preparare la mail, riprova!</string>
