@@ -17,10 +17,10 @@
         android:layout_marginTop="30dp" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:id="@+id/devTeam"
-        android:src="@mipmap/icon"
+        android:src="@drawable/intro_logo"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/introLabel"
         android:layout_centerHorizontal="true" />

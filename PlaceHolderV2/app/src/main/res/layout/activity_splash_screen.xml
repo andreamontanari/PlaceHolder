@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="com.andreamontanari.placeholder.SplashScreenActivity">
+    tools:context="com.amontanari.placeholder.SplashScreenActivity">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@mipmap/icon"
+        android:src="@drawable/intro_logo"
         android:id="@+id/icon"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
