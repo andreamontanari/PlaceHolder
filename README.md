@@ -1,5 +1,5 @@
 # PlaceHolder
-Android app to save the locations you don't want to lose!
+Android (and soon iOS) app to save the locations you don't want to lose!
 
 Main Features:
   - Completely free
