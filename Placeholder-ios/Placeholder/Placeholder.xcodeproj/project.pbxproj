@@ -17,10 +17,14 @@
 		DF98A3141D5E2C7A00CD3588 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF98A3111D5E2C7900CD3588 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DF98A3151D5E2C7A00CD3588 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF98A3121D5E2C7900CD3588 /* RealmSwift.framework */; };
 		DF98A3161D5E2C7A00CD3588 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF98A3121D5E2C7900CD3588 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DF98A31A1D64526A00CD3588 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98A3191D64526A00CD3588 /* InfoViewController.swift */; };
 		DFC251191D5CCED600832CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFC251181D5CCED600832CE5 /* Assets.xcassets */; };
 		DFC2511B1D5CE8DF00832CE5 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2511A1D5CE8DF00832CE5 /* MapsViewController.swift */; };
 		DFC2511D1D5CF03400832CE5 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2511C1D5CF03400832CE5 /* PlacesViewController.swift */; };
 		DFC873CB1D5E272000067A73 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC873CA1D5E272000067A73 /* Place.swift */; };
+		DFE436C11D670DC5009D15DB /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE436C01D670DC5009D15DB /* PlaceCell.swift */; };
+		DFE436C31D671E7E009D15DB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE436C21D671E7E009D15DB /* DetailViewController.swift */; };
+		DFE436C51D675C36009D15DB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE436C41D675C36009D15DB /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,10 +55,14 @@
 		DF3E21361D5A0E06002F1175 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DF98A3111D5E2C7900CD3588 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		DF98A3121D5E2C7900CD3588 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		DF98A3191D64526A00CD3588 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		DFC251181D5CCED600832CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		DFC2511A1D5CE8DF00832CE5 /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		DFC2511C1D5CF03400832CE5 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		DFC873CA1D5E272000067A73 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		DFE436C01D670DC5009D15DB /* PlaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		DFE436C21D671E7E009D15DB /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DFE436C41D675C36009D15DB /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,10 @@
 				DFC2511A1D5CE8DF00832CE5 /* MapsViewController.swift */,
 				DFC2511C1D5CF03400832CE5 /* PlacesViewController.swift */,
 				DFC873CA1D5E272000067A73 /* Place.swift */,
+				DF98A3191D64526A00CD3588 /* InfoViewController.swift */,
+				DFE436C01D670DC5009D15DB /* PlaceCell.swift */,
+				DFE436C21D671E7E009D15DB /* DetailViewController.swift */,
+				DFE436C41D675C36009D15DB /* Utils.swift */,
 			);
 			path = Placeholder;
 			sourceTree = "<group>";
@@ -163,6 +175,7 @@
 				TargetAttributes = {
 					DF3E21201D5A0D78002F1175 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = X7X632B2N9;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -271,9 +284,13 @@
 			files = (
 				DFC2511D1D5CF03400832CE5 /* PlacesViewController.swift in Sources */,
 				DFC2511B1D5CE8DF00832CE5 /* MapsViewController.swift in Sources */,
+				DFE436C51D675C36009D15DB /* Utils.swift in Sources */,
+				DFE436C11D670DC5009D15DB /* PlaceCell.swift in Sources */,
 				DF3E21271D5A0D78002F1175 /* ViewController.swift in Sources */,
 				DF3E21251D5A0D78002F1175 /* AppDelegate.swift in Sources */,
+				DF98A31A1D64526A00CD3588 /* InfoViewController.swift in Sources */,
 				DFC873CB1D5E272000067A73 /* Place.swift in Sources */,
+				DFE436C31D671E7E009D15DB /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,14 +404,19 @@
 			baseConfigurationReference = 108C20A80AF490FE6C11E219 /* Pods-Placeholder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Placeholder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amontanari.Placeholder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -403,14 +425,19 @@
 			baseConfigurationReference = 594D8667216791DAFF0AAA2C /* Pods-Placeholder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Placeholder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amontanari.Placeholder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

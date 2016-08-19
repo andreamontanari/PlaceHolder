@@ -107,15 +107,11 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         marker.map = mapView
         
         let place = Place()
-        place.latitude = latitude
-        place.longitude = longitude
+        place.latitude = String(latitude)
+        place.longitude = String(longitude)
         place.savedOn = NSDate()
         place.streetName = streetName
         place.placeComment = ""
-        
-        print(place.latitude)
-        print(place.longitude)
-        print(place)
         
         // Get the default Realm
         let realm = try! Realm()
@@ -126,19 +122,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             realm.add(place)
         }
         
-        let dialog = UIAlertController(title: "Place saved",
-                                       message: "Your GPS coordinates have been saved correctly!",
-                                       preferredStyle: UIAlertControllerStyle.Alert)
-        // Present the dialog
-        presentViewController(dialog,
-                              animated: false,
-                              completion: {
-                                let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC)))
-                                dispatch_after(delayTime, dispatch_get_main_queue()) {
-                                    dialog.dismissViewControllerAnimated(true, completion: nil)
-                                }
-                                
-                                                })
+        showToast("Place saved", message: "Your GPS coordinates have been saved correctly!", vc: self)
         
         msgBtn.hidden = false;
         
@@ -169,16 +153,21 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             // Get the default Realm
             // You only need to do this once (per thread)
             let realm = try! Realm()
+   
+            let predicate = NSPredicate(format: "latitude = '\(self.latitude)' AND longitude = '\(self.longitude)'")
             
-            let predicate = NSPredicate(format: "latitude = %@ AND longitude = %@", self.latitude, self.longitude)
+            let last_place = realm.objects(Place.self).filter(predicate).first
 
             // Add to the Realm inside a transaction
             try! realm.write {
-                realm.objects(Place.self).filter(predicate).first?.placeComment = textField.text
+                last_place?.placeComment = textField.text
             }
             
             self.msgBtn.hidden = true
             self.mapView.clear()
+            
+            showToast("Place saved", message: "The place has been saved correctly", vc: self)
+
         }))
         
         presentViewController(alert, animated: true, completion: nil)
@@ -192,7 +181,9 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     
     @IBAction func goBack(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        
+        self.navigationController?.popViewControllerAnimated(true)
+        //dismissViewControllerAnimated(true, completion: nil)
     }
     
 }

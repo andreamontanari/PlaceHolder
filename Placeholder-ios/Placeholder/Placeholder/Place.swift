@@ -11,10 +11,16 @@ import Foundation
 
 // Dog model
 class Place: Object {
-    dynamic var streetName: String? // Properties can be optional
-    var latitude: Double!
-    var longitude: Double!
+    dynamic var streetName: String!
+    dynamic var latitude: String!
+    dynamic var longitude: String!
     dynamic var savedOn: NSDate!
     dynamic var placeComment: String?
+    
+    var latlng: String {
+        get {
+            return "\(latitude), \(longitude)"
+        }
+    }
     
 }
