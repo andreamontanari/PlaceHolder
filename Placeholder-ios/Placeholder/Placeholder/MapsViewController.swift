@@ -47,6 +47,19 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             
             //5
             mapView.myLocationEnabled = true
+            
+            pinBtn.enabled = true
+            
+        } else {
+            pinBtn.enabled = false
+            let alert = UIAlertController(title: "Your GPS is turned OFF", message: "GPS access is restricted. In order to save a place, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Open Settings", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) in
+                UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
+            }))
+            
+            //UIApplicationOpenSettingsURLString
+            
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
     

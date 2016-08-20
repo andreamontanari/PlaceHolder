@@ -31,7 +31,7 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         addressLbl.text = currentPlace.streetName
         coordsLbl.text = currentPlace.latlng
-        if currentPlace.placeComment == nil {
+        if currentPlace.placeComment == nil || currentPlace.placeComment == "" {
             commentLbl.text = "\"Write a custom note for the saved place\""
             defaultMessage = "\(currentPlace.streetName) \(currentPlace.latlng) #placeholder"
         } else {
@@ -46,6 +46,54 @@ class DetailViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
         //dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    @IBAction func editCommentPressed(sender: UIButton) {
+        
+        //open dialog
+        let alert = UIAlertController(title: "Write a comment", message: "Post an additional note for the saved place", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:
+            { (action: UIAlertAction!) in
+                alert.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        
+        // configure text field
+        alert.addTextFieldWithConfigurationHandler({(textField: UITextField) in
+            textField.textColor = UIColor.blackColor()
+            textField.placeholder = "Your note"
+            textField.text = self.currentPlace.placeComment
+        })
+        
+        alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
+            //read it
+            let textField = (alert.textFields?.first)! as UITextField
+            //save it
+            // Get the default Realm
+            // You only need to do this once (per thread)
+            let realm = try! Realm()
+            
+            // Add to the Realm inside a transaction
+            try! realm.write {
+                self.currentPlace.placeComment = textField.text
+            }
+            
+            if textField.text == nil || textField.text == ""  {
+                self.commentLbl.text = "\"Write a custom note for the saved place\""
+            } else {
+                self.commentLbl.text = "\"\(textField.text!)\""
+            }
+            
+            showToast("Comment saved", message: "The comment has been saved correctly", vc: self)
+            
+        }))
+        
+        presentViewController(alert, animated: true, completion: nil)
+
+        
+        
+    }
+    
 
     @IBAction func deletePressed(sender: UIButton) {
         //open dialog

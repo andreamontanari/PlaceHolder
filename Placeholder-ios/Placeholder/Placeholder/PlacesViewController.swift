@@ -67,7 +67,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             
             if let place = places![indexPath.row] as? Place {
             
-                let comment = place.placeComment == nil ? "\"Write a custom note for the saved place\"" : "\"\(place.placeComment!)\""
+                let comment = place.placeComment == nil || place.placeComment == "" ? "\"Write a custom note for the saved place\"" : "\"\(place.placeComment!)\""
                 cell.configureCell(place.streetName, coords: place.latlng, comment: comment)
                 return cell
             } else {
