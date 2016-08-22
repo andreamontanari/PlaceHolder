@@ -71,6 +71,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
                 
                 let comment = place.placeComment == nil || place.placeComment == "" ? "\"\(placeholder)\"" : "\"\(place.placeComment!)\""
                 cell.configureCell(place.streetName, coords: place.latlng, comment: comment)
+                
                 return cell
             } else {
                 return PlaceCell()

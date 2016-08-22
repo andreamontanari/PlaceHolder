@@ -169,7 +169,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
    
             let predicate = NSPredicate(format: "latitude = '\(self.latitude)' AND longitude = '\(self.longitude)'")
             
-            let last_place = realm.objects(Place.self).filter(predicate).first
+            let last_place = realm.objects(Place.self).filter(predicate).sorted("savedOn", ascending: false).first
 
             // Add to the Realm inside a transaction
             try! realm.write {
