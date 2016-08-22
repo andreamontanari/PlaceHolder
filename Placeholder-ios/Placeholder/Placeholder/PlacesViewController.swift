@@ -19,6 +19,8 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     
     var currentPlace: Place!
     
+    let cellSpacingHeight: CGFloat = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +67,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("placeCell") as? PlaceCell {
             
-            if let place = places![indexPath.row] as? Place {
+            if let place = places![indexPath.section] as? Place {
             
                 let placeholder = NSLocalizedString("PLACE_COMMENT_PLACEHOLDER", comment: "")
                 
@@ -82,17 +84,43 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    /*
+     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+     return 1
+     }
+    */
+    
+    // have one section for every array item
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return places!.count
     }
     
+    // There is just one row in every section
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    // Set the spacing between sections
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+    // Make the background color show through
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clearColor()
+        return headerView
+    }
+
+    /*
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return places!.count
+    }
+     */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        currentPlace = places![indexPath.row]
+        currentPlace = places![indexPath.section]
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -102,7 +130,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
-                let selectedPlace = places![indexPath.row]
+                let selectedPlace = places![indexPath.section]
                 destinationVC.currentPlace = selectedPlace
             }
         }
