@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  Placeholder
+
+  Created by Andrea Montanari on 22/08/16.
+  Copyright © 2016 Andrea Montanari. All rights reserved.
+*/
+
+// MapsVC
+"GPS_OFF_TITLE" = "Your GPS is turned OFF";
+"GPS_OFF_MSG" = "GPS access is restricted. In order to save a place, please enable GPS in the Settigs app under Privacy, Location Services.";
+"GPS_OFF_OPEN_SETTINGS" = "Open Settings";
+"ADDR_NOT_FOUND" = "No address found";
+"MARKER_ADD_TITLE" = "Current place";
+"PLACE_ADDED_OK_TITLE" = "Place saved";
+"PLACE_ADDED_OK_MSG" = "Your GPS coordinates have been saved correctly";
+"PLACE_COMMENT_TITLE" = "Write a comment";
+"PLACE_COMMENT_MSG" = "Post an additional note for the saved place";
+"CANCEL" = "Cancel";
+"PLACE_COMMENT_HINT" = "Your note";
+"SAVE" = "Save";
+"PLACE_COMMENT_OK_TITLE" = "Comment saved";
+"PLACE_COMMENT_OK_MSG" = "Your note has been saved correctly";
+
+//PlacesVC
+"PLACE_COPIED" = "Place copied successfully";
+"PLACE_COMMENT_PLACEHOLDER" = "Write a custom note for the saved place";
+
+//InfoVC
+"RESET_ALL_TITLE" = "Reset all";
+"RESET_ALL_MSG" = "Do you really want to delete all saved places?";
+"RESET_ALL_CONFIRM" = "Yes, reset";
+"MAIL_OBJECT" = "PlaceHolder Request";
+"MAIL_BODY" = "Dear Andrea,";
+"ERR_MAIL_TITLE" = "Could Not Send Email";
+"ERR_MAIL_MSG" = "Your device could not send e-mail.  Please check e-mail configuration and try again.";
+
+//DetailVC
+"DELETE_PLACE_TITLE" = "Delete place";
+"DELETE_PLACE_MSG" = "Do you really want to delete this place?";
+"DELETE_PLACE_CONFIRM" = "Yes, delete";
+"DELETE_PLACE_OK_TITLE" = "Place deleted";
+"DELETE_PLACE_OK_MSG" = "The place has been deleted correctly";
+"FB_LOGIN_TITLE" = "Login on Facebook";
+"FB_LOGIN_MSG" = "Please login to a Facebook account to share.";
+"TW_LOGIN_TITLE" = "Login on Twitter";
+"TW_LOGIN_MSG" = "Please login to a Twitter account to tweet.";
+"MAPS_DESTINATION" = "Target destination";
+"ERR_MAPS_TITLE" = "Error with Maps";
+"ERR_MAPS_MSG" = "Can't open any Maps app, please install Google Maps and retry";

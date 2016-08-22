@@ -31,8 +31,9 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         addressLbl.text = currentPlace.streetName
         coordsLbl.text = currentPlace.latlng
+        let placeholder = NSLocalizedString("PLACE_COMMENT_PLACEHOLDER", comment: "")
         if currentPlace.placeComment == nil || currentPlace.placeComment == "" {
-            commentLbl.text = "\"Write a custom note for the saved place\""
+            commentLbl.text = "\"\(placeholder)\""
             defaultMessage = "\(currentPlace.streetName) \(currentPlace.latlng) #placeholder"
         } else {
             commentLbl.text = "\"\(currentPlace.placeComment!)\""
@@ -51,9 +52,9 @@ class DetailViewController: UIViewController {
     @IBAction func editCommentPressed(sender: UIButton) {
         
         //open dialog
-        let alert = UIAlertController(title: "Write a comment", message: "Post an additional note for the saved place", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: NSLocalizedString("PLACE_COMMENT_TITLE", comment: ""), message: NSLocalizedString("PLACE_COMMENT_MSG", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: UIAlertActionStyle.Cancel, handler:
             { (action: UIAlertAction!) in
                 alert.dismissViewControllerAnimated(true, completion: nil)
         }))
@@ -61,11 +62,11 @@ class DetailViewController: UIViewController {
         // configure text field
         alert.addTextFieldWithConfigurationHandler({(textField: UITextField) in
             textField.textColor = UIColor.blackColor()
-            textField.placeholder = "Your note"
+            textField.placeholder = NSLocalizedString("PLACE_COMMENT_HINT", comment: "")
             textField.text = self.currentPlace.placeComment
         })
         
-        alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("SAVE", comment: ""), style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
             //read it
             let textField = (alert.textFields?.first)! as UITextField
             //save it
@@ -78,13 +79,15 @@ class DetailViewController: UIViewController {
                 self.currentPlace.placeComment = textField.text
             }
             
+            let placeholder = NSLocalizedString("PLACE_COMMENT_PLACEHOLDER", comment: "")
+            
             if textField.text == nil || textField.text == ""  {
-                self.commentLbl.text = "\"Write a custom note for the saved place\""
+                self.commentLbl.text = "\"\(placeholder)\""
             } else {
                 self.commentLbl.text = "\"\(textField.text!)\""
             }
             
-            showToast("Comment saved", message: "The comment has been saved correctly", vc: self)
+            showToast(NSLocalizedString("PLACE_COMMENT_OK_TITLE", comment: ""), message: NSLocalizedString("PLACE_COMMENT_OK_MSG", comment: ""), vc: self)
             
         }))
         
@@ -97,14 +100,14 @@ class DetailViewController: UIViewController {
 
     @IBAction func deletePressed(sender: UIButton) {
         //open dialog
-        let alert = UIAlertController(title: "Delete place", message: "Do you really want to delete this place?", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: NSLocalizedString("DELETE_PLACE_TITLE", comment: ""), message: NSLocalizedString("DELETE_PLACE_MSG", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: UIAlertActionStyle.Cancel, handler:
             { (action: UIAlertAction!) in
                 alert.dismissViewControllerAnimated(true, completion: nil)
         }))
         
-        alert.addAction(UIAlertAction(title: "Yes, Delete", style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("DELETE_PLACE_CONFIRM", comment: ""), style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
             // Get the default Realm
             // You only need to do this once (per thread)
             let realm = try! Realm()
@@ -116,7 +119,7 @@ class DetailViewController: UIViewController {
             
              self.navigationController?.popViewControllerAnimated(true)
             
-             showToast("Place deleted", message: "The place has been deleted correctly", vc: self)
+             showToast(NSLocalizedString("DELETE_PLACE_OK_TITLE", comment: ""), message: NSLocalizedString("DELETE_PLACE_OK_MSG", comment: ""), vc: self)
             
         }))
         
@@ -136,7 +139,7 @@ class DetailViewController: UIViewController {
             self.presentViewController(fbShare, animated: true, completion: nil)
             
         } else {
-            let alert = UIAlertController(title: "Accounts", message: "Please login to a Facebook account to share.", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: NSLocalizedString("FB_LOGIN_TITLE", comment: ""), message: NSLocalizedString("FB_LOGIN_MSG", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -152,7 +155,7 @@ class DetailViewController: UIViewController {
             
         } else {
             
-            let alert = UIAlertController(title: "Accounts", message: "Please login to a Twitter account to tweet.", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: NSLocalizedString("TW_LOGIN_TITLE", comment: ""), message: NSLocalizedString("TW_LOGIN_MSG", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             
@@ -173,14 +176,14 @@ class DetailViewController: UIViewController {
         //Apple Maps
         let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(currentPlace.latitude)!, CLLocationDegrees(currentPlace.longitude)!)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
-        mapItem.name = "Target location"
+        mapItem.name = NSLocalizedString("MAPS_DESTINATION", comment: "")
         mapItem.openInMapsWithLaunchOptions([MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
             
         if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"http://maps.apple.com")!)) {
             UIApplication.sharedApplication().openURL(NSURL(string:
             "http://maps.apple.com/?ll=\(currentPlace.latitude),\(currentPlace.longitude)")!)
         } else {
-            NSLog("Can't use Apple Maps and Google Maps");
+            showToast(NSLocalizedString("ERR_MAPS_TITLE", comment: ""), message: NSLocalizedString("ERR_MAPS_MSG", comment: ""), vc: self)
             }
         }
     }

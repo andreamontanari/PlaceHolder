@@ -34,7 +34,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </textAttributes>
                                         <items>
-                                            <navigationItem title="Welcome to Placeholder" id="Ykk-N2-wzp">
+                                            <navigationItem title="Benvenuti su Placeholder" id="Ykk-N2-wzp">
                                                 <barButtonItem key="rightBarButtonItem" image="ic_info_white_24dp" id="zbJ-zo-zEt">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
@@ -55,7 +55,7 @@
                                     <constraint firstAttribute="height" constant="163" id="tja-hH-uze"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pin down your location or view the saved ones" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUN-0s-JUk" userLabel="intro_label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Salva la posizione attuale o naviga tra quelle già salvate" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUN-0s-JUk" userLabel="intro_label">
                                 <rect key="frame" x="118" y="363" width="363" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.050980392843484879" green="0.27843138575553894" blue="0.63137257099151611" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,7 +71,7 @@
                                             <constraint firstAttribute="height" constant="40" id="MQ1-AW-cwh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <state key="normal" title="YOUR PLACES">
+                                        <state key="normal" title="LE TUE POSIZIONI">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -82,7 +82,7 @@
                                         <rect key="frame" x="0.0" y="50" width="460" height="40"/>
                                         <color key="backgroundColor" red="0.0" green="0.90196079015731812" blue="0.46274510025978088" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                        <state key="normal" title="SAVE YOUR POSITION">
+                                        <state key="normal" title="SALVA LA TUA POSIZIONE">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -147,8 +147,8 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </textAttributes>
                                         <items>
-                                            <navigationItem title="Information" id="reQ-Wa-tzG">
-                                                <barButtonItem key="leftBarButtonItem" title="Back" id="wh9-9B-7X8">
+                                            <navigationItem title="Informazioni" id="reQ-Wa-tzG">
+                                                <barButtonItem key="leftBarButtonItem" title="Indietro" id="wh9-9B-7X8">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="goBack:" destination="9d5-hg-L6G" id="cxx-NG-IAj"/>
@@ -159,13 +159,13 @@
                                     </navigationBar>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Developed by @ndreamontanari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNz-Xp-IZI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sviluppata da @ndreamontanari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNz-Xp-IZI">
                                 <rect key="frame" x="177" y="95" width="247" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.050980392843484879" green="0.27843138575553894" blue="0.63137257099151611" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Support PlaceHolder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJu-oU-rz2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sostieni PlaceHolder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJu-oU-rz2">
                                 <rect key="frame" x="212" y="332" width="176" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.050980392839999999" green="0.27843138579999999" blue="0.63137257099999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -188,7 +188,7 @@
                                             <constraint firstAttribute="height" constant="40" id="iOz-7t-mU9"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                        <state key="normal" title="CONTACT DEVELOPER">
+                                        <state key="normal" title="CONTATTA SVILUPPATORE">
                                             <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -199,7 +199,7 @@
                                         <rect key="frame" x="0.0" y="55" width="600" height="40"/>
                                         <color key="backgroundColor" red="0.050980392843484879" green="0.27843138575553894" blue="0.63137257099151611" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                        <state key="normal" title="DELETE EVERYTHING">
+                                        <state key="normal" title="CANCELLA TUTTO">
                                             <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -212,7 +212,7 @@
                                     <constraint firstAttribute="trailing" secondItem="aEf-uA-WiU" secondAttribute="trailing" id="fyv-O7-Ndf"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Logo by @gabrielebiancat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Po7-Fp-GIJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Logo realizzato da @gabrielebiancat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Po7-Fp-GIJ">
                                 <rect key="frame" x="199" y="245" width="202" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.050980392843484879" green="0.27843138575553894" blue="0.63137257099151611" alpha="1" colorSpace="calibratedRGB"/>
@@ -308,7 +308,7 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </textAttributes>
                                         <items>
-                                            <navigationItem title="Save your position" id="r2o-Rc-uOT">
+                                            <navigationItem title="Salva la tua posizione" id="r2o-Rc-uOT">
                                                 <barButtonItem key="leftBarButtonItem" systemItem="done" id="dIR-fJ-m9P">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
@@ -424,7 +424,7 @@
                                                         <constraint firstAttribute="bottomMargin" secondItem="FIf-ZN-c4C" secondAttribute="bottom" constant="20" id="pfd-qW-1D8"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="rFo-H6-E18">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Indirizzo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="rFo-H6-E18">
                                                     <rect key="frame" x="17" y="8" width="555" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="VgT-sU-CK5"/>
@@ -433,7 +433,7 @@
                                                     <color key="textColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="coordinates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYd-ee-ezN">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="coordinate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYd-ee-ezN">
                                                     <rect key="frame" x="17" y="40" width="555" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="vJO-gr-j3k"/>
@@ -484,8 +484,8 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </textAttributes>
                                         <items>
-                                            <navigationItem title="Your places" id="9m4-uO-Jq9">
-                                                <barButtonItem key="leftBarButtonItem" title="Back" id="Ws5-6T-BjU">
+                                            <navigationItem title="Le tue posizioni" id="9m4-uO-Jq9">
+                                                <barButtonItem key="leftBarButtonItem" title="Indietro" id="Ws5-6T-BjU">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="goBack:" destination="R6f-2z-db3" id="uun-fS-B0D"/>
@@ -554,8 +554,8 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </textAttributes>
                                         <items>
-                                            <navigationItem title="Selected Place" id="RUz-oq-x60">
-                                                <barButtonItem key="leftBarButtonItem" title="Back" id="NyI-0j-fjw">
+                                            <navigationItem title="Posizione selezionata" id="RUz-oq-x60">
+                                                <barButtonItem key="leftBarButtonItem" title="Indietro" id="NyI-0j-fjw">
                                                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="goBack:" destination="Q37-5b-7gk" id="SLw-0i-K3z"/>
@@ -580,7 +580,7 @@
                                     <constraint firstAttribute="height" constant="30" id="jfw-5M-tpy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="DELETE PLACE">
+                                <state key="normal" title="CANCELLA POSIZIONE">
                                     <color key="titleColor" red="0.99226981401443481" green="0.9961743950843811" blue="0.99166792631149292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -594,7 +594,7 @@
                                     <constraint firstAttribute="height" constant="26" id="aqa-mx-LFy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="SHARE">
+                                <state key="normal" title="CONDIVIDI">
                                     <color key="titleColor" red="0.0" green="0.90196079019999997" blue="0.46274510029999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -608,7 +608,7 @@
                                     <constraint firstAttribute="width" constant="83" id="hWu-h5-ZJu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="NAVIGATE">
+                                <state key="normal" title="NAVIGA">
                                     <color key="titleColor" red="0.0" green="0.90196079019999997" blue="0.46274510029999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -672,7 +672,7 @@
                                                     <action selector="facebookPressed:" destination="Q37-5b-7gk" eventType="touchUpInside" id="Ptn-I1-gqT"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose where to post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPZ-ch-lGG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Scegli dove postare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPZ-ch-lGG">
                                                 <rect key="frame" x="8" y="14" width="181" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <color key="textColor" red="0.12941177189350128" green="0.58823531866073608" blue="0.9529411792755127" alpha="1" colorSpace="calibratedRGB"/>

@@ -40,7 +40,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         if (indexPath != nil) && (longPressGesture.state == UIGestureRecognizerState.Began) {
             let copiedPlace = places![indexPath!.row]
             UIPasteboard.generalPasteboard().string = "\(copiedPlace.streetName), (\(copiedPlace.latlng))"
-            showToast("", message: "Place copied", vc: self)
+            showToast("", message: NSLocalizedString("PLACE_COPIED", comment: ""), vc: self)
         }
         
     }
@@ -67,7 +67,9 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             
             if let place = places![indexPath.row] as? Place {
             
-                let comment = place.placeComment == nil || place.placeComment == "" ? "\"Write a custom note for the saved place\"" : "\"\(place.placeComment!)\""
+                let placeholder = NSLocalizedString("PLACE_COMMENT_PLACEHOLDER", comment: "")
+                
+                let comment = place.placeComment == nil || place.placeComment == "" ? "\"\(placeholder)\"" : "\"\(place.placeComment!)\""
                 cell.configureCell(place.streetName, coords: place.latlng, comment: comment)
                 return cell
             } else {

@@ -52,8 +52,8 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             
         } else {
             pinBtn.enabled = false
-            let alert = UIAlertController(title: "Your GPS is turned OFF", message: "GPS access is restricted. In order to save a place, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Open Settings", style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) in
+            let alert = UIAlertController(title: NSLocalizedString("GPS_OFF_TITLE", comment: ""), message: NSLocalizedString("GPS_OFF_MSG", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("GPS_OFF_OPEN_SETTINGS", comment: ""), style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) in
                 UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
             }))
             
@@ -110,12 +110,12 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         latitude = coords!.latitude
         longitude = coords!.longitude
         
-        let streetName = self.current_streetName == nil ? "No address found" : self.current_streetName
+        let streetName = self.current_streetName == nil ? NSLocalizedString("ADDR_NOT_FOUND", comment: "") : self.current_streetName
     
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         marker.icon = UIImage(named: "pin_added")
-        marker.title = "Current P8lace"
+        marker.title = NSLocalizedString("MARKER_ADD_TITLE", comment: "")
         marker.snippet = streetName
         marker.map = mapView
         
@@ -135,7 +135,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             realm.add(place)
         }
         
-        showToast("Place saved", message: "Your GPS coordinates have been saved correctly!", vc: self)
+        showToast(NSLocalizedString("PLACE_ADDED_OK_TITLE", comment: ""), message: NSLocalizedString("PLACE_ADDED_OK_MSG", comment: ""), vc: self)
         
         msgBtn.hidden = false;
         
@@ -146,9 +146,9 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     @IBAction func writeMessage(sender: UIButton) {
         
         //open dialog
-        let alert = UIAlertController(title: "Write a comment", message: "Post an additional note for the saved place", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: NSLocalizedString("PLACE_COMMENT_TITLE", comment: ""), message: NSLocalizedString("PLACE_COMMENT_MSG", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: UIAlertActionStyle.Cancel, handler:
             { (action: UIAlertAction!) in
                 alert.dismissViewControllerAnimated(true, completion: nil)
         }))
@@ -156,10 +156,10 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         // configure text field
         alert.addTextFieldWithConfigurationHandler({(textField: UITextField) in
             textField.textColor = UIColor.blackColor()
-            textField.placeholder = "Your note"
+            textField.placeholder = NSLocalizedString("PLACE_COMMENT_HINT", comment: "")
             })
 
-        alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("SAVE", comment: ""), style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
             //read it
             let textField = (alert.textFields?.first)! as UITextField
             //save it
@@ -179,7 +179,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             self.msgBtn.hidden = true
             self.mapView.clear()
             
-            showToast("Place saved", message: "The place has been saved correctly", vc: self)
+            showToast(NSLocalizedString("PLACE_COMMENT_OK_TITLE", comment: ""), message: NSLocalizedString("PLACE_COMMENT_OK_MSG", comment: ""), vc: self)
 
         }))
         

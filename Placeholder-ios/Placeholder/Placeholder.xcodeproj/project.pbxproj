@@ -18,6 +18,7 @@
 		DF98A3151D5E2C7A00CD3588 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF98A3121D5E2C7900CD3588 /* RealmSwift.framework */; };
 		DF98A3161D5E2C7A00CD3588 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF98A3121D5E2C7900CD3588 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DF98A31A1D64526A00CD3588 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF98A3191D64526A00CD3588 /* InfoViewController.swift */; };
+		DFA1EDF41D6B0045006D18D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DFA1EDF61D6B0045006D18D4 /* Localizable.strings */; };
 		DFC251191D5CCED600832CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFC251181D5CCED600832CE5 /* Assets.xcassets */; };
 		DFC2511B1D5CE8DF00832CE5 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2511A1D5CE8DF00832CE5 /* MapsViewController.swift */; };
 		DFC2511D1D5CF03400832CE5 /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2511C1D5CF03400832CE5 /* PlacesViewController.swift */; };
@@ -49,13 +50,17 @@
 		DF3E21211D5A0D78002F1175 /* Placeholder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Placeholder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF3E21241D5A0D78002F1175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF3E21261D5A0D78002F1175 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DF3E21291D5A0D78002F1175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DF3E212E1D5A0D78002F1175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF3E21301D5A0D78002F1175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF3E21361D5A0E06002F1175 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DF98A3111D5E2C7900CD3588 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		DF98A3121D5E2C7900CD3588 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		DF98A3191D64526A00CD3588 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		DFA1EDEB1D6AFDC7006D18D4 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = it; path = it.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DFA1EDF11D6AFE00006D18D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DFA1EDF71D6B0047006D18D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DFA1EDF81D6B0049006D18D4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DFA1EDFC1D6B43D4006D18D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DFA1EDFE1D6B4418006D18D4 /* it */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = it; path = it.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DFC251181D5CCED600832CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		DFC2511A1D5CE8DF00832CE5 /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		DFC2511C1D5CF03400832CE5 /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +135,7 @@
 				DFC88BAB1D68C33E00A77252 /* View */,
 				DFC88BAD1D68C34800A77252 /* Utils */,
 				DFC88BAC1D68C34200A77252 /* Controller */,
+				DFA1EDF61D6B0045006D18D4 /* Localizable.strings */,
 			);
 			path = Placeholder;
 			sourceTree = "<group>";
@@ -223,6 +229,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = DF3E21181D5A0D78002F1175;
 			productRefGroup = DF3E21221D5A0D78002F1175 /* Products */;
@@ -240,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF3E212F1D5A0D78002F1175 /* LaunchScreen.storyboard in Resources */,
+				DFA1EDF41D6B0045006D18D4 /* Localizable.strings in Resources */,
 				DFC251191D5CCED600832CE5 /* Assets.xcassets in Resources */,
 				DF3E212A1D5A0D78002F1175 /* Main.storyboard in Resources */,
 			);
@@ -332,7 +340,8 @@
 		DF3E21281D5A0D78002F1175 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DF3E21291D5A0D78002F1175 /* Base */,
+				DFA1EDEB1D6AFDC7006D18D4 /* it */,
+				DFA1EDF11D6AFE00006D18D4 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -340,9 +349,19 @@
 		DF3E212D1D5A0D78002F1175 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DF3E212E1D5A0D78002F1175 /* Base */,
+				DFA1EDFC1D6B43D4006D18D4 /* en */,
+				DFA1EDFE1D6B4418006D18D4 /* it */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DFA1EDF61D6B0045006D18D4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DFA1EDF71D6B0047006D18D4 /* en */,
+				DFA1EDF81D6B0049006D18D4 /* it */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

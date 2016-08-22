@@ -72,14 +72,14 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         
         // dialog: do you want to reset?
         //open dialog
-        let alert = UIAlertController(title: "Reset all", message: "Do you really want to delete all saved places?", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: NSLocalizedString("RESET_ALL_TITLE", comment: ""), message: NSLocalizedString("RESET_ALL_MSG", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:
+        alert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: UIAlertActionStyle.Cancel, handler:
             { (action: UIAlertAction!) in
                 alert.dismissViewControllerAnimated(true, completion: nil)
         }))
         
-        alert.addAction(UIAlertAction(title: "Yes, Delete", style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("RESET_ALL_CONFIRM", comment: ""), style: UIAlertActionStyle.Default, handler:{ (UIAlertAction)in
             // Get the default Realm
             // You only need to do this once (per thread)
             let realm = try! Realm()
@@ -99,16 +99,16 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
             
         mailComposerVC.setToRecipients(["andrea.montanari92@gmail.com"])
-        mailComposerVC.setSubject("PlaceHolder Request")
-        mailComposerVC.setMessageBody("Dear Andrea,", isHTML: false)
+        mailComposerVC.setSubject(NSLocalizedString("MAIL_OBJECT", comment: ""))
+        mailComposerVC.setMessageBody(NSLocalizedString("MAIL_BODY", comment: ""), isHTML: false)
             
         return mailComposerVC
     }
         
     func showSendMailErrorAlert() {
 
-         let sendMailErrorAlert = UIAlertController(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", preferredStyle: UIAlertControllerStyle.Alert)
-        sendMailErrorAlert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:
+         let sendMailErrorAlert = UIAlertController(title: NSLocalizedString("ERR_MAIL_TITLE", comment: ""), message: NSLocalizedString("ERR_MAIL_MSG", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
+        sendMailErrorAlert.addAction(UIAlertAction(title: NSLocalizedString("CANCEL", comment: ""), style: UIAlertActionStyle.Cancel, handler:
             { (action: UIAlertAction!) in
                 sendMailErrorAlert.dismissViewControllerAnimated(true, completion: nil)
         }))
