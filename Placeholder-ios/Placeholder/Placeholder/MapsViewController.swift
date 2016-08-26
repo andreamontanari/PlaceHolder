@@ -50,8 +50,9 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             
             pinBtn.enabled = true
             
-        } else {
+        } else  {
             pinBtn.enabled = false
+            /*
             let alert = UIAlertController(title: NSLocalizedString("GPS_OFF_TITLE", comment: ""), message: NSLocalizedString("GPS_OFF_MSG", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("GPS_OFF_OPEN_SETTINGS", comment: ""), style: UIAlertActionStyle.Default, handler: { (alert: UIAlertAction!) in
                 UIApplication.sharedApplication().openURL(NSURL(string:UIApplicationOpenSettingsURLString)!)
@@ -60,6 +61,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             //UIApplicationOpenSettingsURLString
             
             presentViewController(alert, animated: true, completion: nil)
+            */
         }
     }
     

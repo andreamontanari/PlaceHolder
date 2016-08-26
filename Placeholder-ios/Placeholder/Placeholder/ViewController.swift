@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import GoogleMaps
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController {
     
     var locationManager: CLLocationManager?
     
@@ -26,9 +26,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     
     @IBAction func savePlacePressed(sender: UIButton) {
-        
-        locationManager = CLLocationManager()
-        locationManager!.delegate = self
         
          performSegueWithIdentifier("mapsIdentifier", sender: self)
         /*
