@@ -22,7 +22,7 @@ PlaceHolder uses a number of libraries:
 * [Github](https://github.com/andreamontanari/PlaceHolder) - track down changes in your project
 * [markdown-it](http://daringfireball.net/projects/markdown/) - Markdown parser done right. Fast and easy to extend.
 
-And of course PlaceHolder itself is open source with a [public repository](https://github.com/andreamontanari/PlaceHolder)
+And of course PlaceHolder itself is open source with a [public repository](https://github.com/amontanari/PlaceHolder)
  on GitHub.
 
 ### Installation
