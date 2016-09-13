@@ -60,6 +60,8 @@
 		<string>MKDirectionsModeSubway</string>
 		<string>MKDirectionsModeTrain</string>
 	</array>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright @ 2016 Andrea Montanari. All rights reserved.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>To let you save your current place</string>
 	<key>UILaunchStoryboardName</key>
