@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  Placeholder
+
+  Created by Andrea Montanari on 22/08/16.
+  Copyright © 2016 Andrea Montanari. All rights reserved.
+*/
+
+
+
+// MapsVC
+"GPS_OFF_TITLE" = "Il tuo GPS è spento";
+"GPS_OFF_MSG" = "Il segnale GPS è spento. Per salvare una posizione, abilita il GPS dalle impostazioni, nella sezione Privacy, Localizzazione.";
+"GPS_OFF_OPEN_SETTINGS" = "Apri impostazioni";
+"ADDR_NOT_FOUND" = "Indirizzo non trovato";
+"MARKER_ADD_TITLE" = "Posizione salvata";
+"PLACE_ADDED_OK_TITLE" = "Posizione aggiunta";
+"PLACE_ADDED_OK_MSG" = "La posizione è stata salvata correttamente";
+"PLACE_COMMENT_TITLE" = "Aggiungi un commento";
+"PLACE_COMMENT_MSG" = "Scrivi un commento per la posizione salvata";
+"CANCEL" = "Indietro";
+"PLACE_COMMENT_HINT" = "La tua nota";
+"SAVE" = "Salva";
+"PLACE_COMMENT_OK_TITLE" = "Commento salvato";
+"PLACE_COMMENT_OK_MSG" = "Commento aggiunto alla posizione correttamente";
+
+//PlacesVC
+"PLACE_COPIED" = "Posizione copiata!";
+"PLACE_COMMENT_PLACEHOLDER" = "Scrivi un commento per la posizione salvata";
+
+//InfoVC
+"RESET_ALL_TITLE" = "Cancella tutto";
+"RESET_ALL_MSG" = "Vuoi davvero eliminare tutte le posizioni salvate?";
+"RESET_ALL_CONFIRM" = "Si, elimina";
+"MAIL_OBJECT" = "Richiesta PlaceHolder";
+"MAIL_BODY" = "Ciao Andrea,";
+"ERR_MAIL_TITLE" = "Errore invio email";
+"ERR_MAIL_MSG" = "Il dispositivo non può inviare email, controlla la configurazione dell'email e riprova.";
+
+//DetailVC
+"DELETE_PLACE_TITLE" = "Cancella posizione";
+"DELETE_PLACE_MSG" = "Vuoi davvero eliminare questa posizione?";
+"DELETE_PLACE_CONFIRM" = "Si, elimina";
+"DELETE_PLACE_OK_TITLE" = "Posizione eliminata";
+"DELETE_PLACE_OK_MSG" = "La posizione è stata cancellata correttamente";
+"FB_LOGIN_TITLE" = "Login su Facebook";
+"FB_LOGIN_MSG" = "Per piacere, esegui il login su Facebook per condividere contenuti.";
+"TW_LOGIN_TITLE" = "Login su Twitter";
+"TW_LOGIN_MSG" = "Per piacere, esegui il login su Twitter per twittare.";
+"MAPS_DESTINATION" = "Destinazione";
+"ERR_MAPS_TITLE" = "Errore con Mappe";
+"ERR_MAPS_MSG" = "Non è possibile aprire l'applicazione Mappe o Google Maps!";
