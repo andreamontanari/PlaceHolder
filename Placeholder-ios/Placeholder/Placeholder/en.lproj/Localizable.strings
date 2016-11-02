@@ -6,6 +6,9 @@
   Copyright © 2016 Andrea Montanari. All rights reserved.
 */
 
+//SplashVC
+"SPLASH_LBL" = "Your places, secured!";
+
 // MapsVC
 "GPS_OFF_TITLE" = "Your GPS is turned OFF";
 "GPS_OFF_MSG" = "GPS access is restricted. In order to save a place, please enable GPS in the Settigs app under Privacy, Location Services.";

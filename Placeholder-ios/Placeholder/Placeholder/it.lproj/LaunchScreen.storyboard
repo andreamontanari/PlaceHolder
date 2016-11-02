@@ -16,26 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_logo" translatesAutoresizingMaskIntoConstraints="NO" id="naW-1F-OX7">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_logo_en" translatesAutoresizingMaskIntoConstraints="NO" id="1gt-BH-hXl" userLabel="intro_logo">
+                                <rect key="frame" x="150" y="200" width="300" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="a6P-5f-j3X"/>
-                                    <constraint firstAttribute="height" constant="128" id="uLZ-T5-1L9"/>
+                                    <constraint firstAttribute="height" constant="200" id="3NS-VP-ucn"/>
+                                    <constraint firstAttribute="width" constant="300" id="Fcd-Yf-JyB"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="I tuoi posti, al sicuro!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vax-yS-z9P" userLabel="splash_lbl">
-                                <rect key="frame" x="195" y="417" width="211" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1294117719" green="0.58823531870000001" blue="0.9529411793" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="naW-1F-OX7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DbT-7O-lMr"/>
-                            <constraint firstItem="vax-yS-z9P" firstAttribute="top" secondItem="naW-1F-OX7" secondAttribute="bottom" constant="53" id="J9C-po-Hjc"/>
-                            <constraint firstItem="vax-yS-z9P" firstAttribute="centerX" secondItem="naW-1F-OX7" secondAttribute="centerX" id="JWE-Mb-5Cd"/>
-                            <constraint firstItem="naW-1F-OX7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Jz4-nI-qDc"/>
+                            <constraint firstItem="1gt-BH-hXl" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="P5N-nL-ZBp"/>
+                            <constraint firstItem="1gt-BH-hXl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SoA-8y-dRl"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="intro_logo" width="400" height="449"/>
+        <image name="intro_logo_en" width="481" height="409"/>
     </resources>
 </document>

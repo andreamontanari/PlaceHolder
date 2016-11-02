@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>it</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -26,11 +26,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.6</string>
+	<string>2.5</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>8</string>
+	<string>7</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationQueriesSchemes</key>
@@ -63,11 +63,11 @@
 		<string>MKDirectionsModeTrain</string>
 	</array>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright @ 2016 Andrea Montanari. All rights reserved.</string>
+	<string>Copyright @ 2016 Andrea Montanari. Tutti i diritti riservati.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>To let you save your current place</string>
+	<string>Per consentire il salvataggio della posizione corrente</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>LaunchScreenIt</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
