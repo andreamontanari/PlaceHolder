@@ -26,7 +26,6 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     var current_streetName: String?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -182,7 +181,6 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             self.mapView.clear()
             
             showToast(NSLocalizedString("PLACE_COMMENT_OK_TITLE", comment: ""), message: NSLocalizedString("PLACE_COMMENT_OK_MSG", comment: ""), vc: self)
-
         }))
         
         presentViewController(alert, animated: true, completion: nil)

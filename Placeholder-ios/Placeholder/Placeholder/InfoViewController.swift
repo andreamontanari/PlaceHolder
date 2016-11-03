@@ -52,7 +52,7 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
     
     @IBAction func webButtonPressed(sender: UIButton) {
         
-        let url = NSURL(string: "https://github.com/andreamontanari/PlaceHolder")!
+        let url = NSURL(string: "https://github.com/andreamontanari/PlaceHolder/blob/master/README.md")!
         UIApplication.sharedApplication().openURL(url)
     }
 
@@ -98,7 +98,7 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
             
-        mailComposerVC.setToRecipients(["andrea.montanari92@gmail.com"])
+        mailComposerVC.setToRecipients(["dev@mountinnovation.com"])
         mailComposerVC.setSubject(NSLocalizedString("MAIL_OBJECT", comment: ""))
         mailComposerVC.setMessageBody(NSLocalizedString("MAIL_BODY", comment: ""), isHTML: false)
             
@@ -123,6 +123,5 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         controller.dismissViewControllerAnimated(true, completion: nil)
             
     }
-    
-    
+
 }
