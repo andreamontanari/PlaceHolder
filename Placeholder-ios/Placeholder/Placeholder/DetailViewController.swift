@@ -34,10 +34,10 @@ class DetailViewController: UIViewController {
         coordsLbl.text = currentPlace.latlng
         let placeholder = NSLocalizedString("PLACE_COMMENT_PLACEHOLDER", comment: "")
         if currentPlace.placeComment == nil || currentPlace.placeComment == "" {
-            commentLbl.text = "\"\(placeholder)\""
+            commentLbl.text = "\(placeholder)"
             defaultMessage = "\(currentPlace.streetName) \(currentPlace.latlng) #placeholder"
         } else {
-            commentLbl.text = "\"\(currentPlace.placeComment!)\""
+            commentLbl.text = "\(currentPlace.placeComment!)"
             defaultMessage = "\"\(currentPlace.placeComment!)\" - \(currentPlace.streetName) (\(currentPlace.latlng)) #placeholder"
         }
         
@@ -83,9 +83,9 @@ class DetailViewController: UIViewController {
             let placeholder = NSLocalizedString("PLACE_COMMENT_PLACEHOLDER", comment: "")
             
             if textField.text == nil || textField.text == ""  {
-                self.commentLbl.text = "\"\(placeholder)\""
+                self.commentLbl.text = "\(placeholder)"
             } else {
-                self.commentLbl.text = "\"\(textField.text!)\""
+                self.commentLbl.text = "\(textField.text!)"
             }
             
             showToast(NSLocalizedString("PLACE_COMMENT_OK_TITLE", comment: ""), message: NSLocalizedString("PLACE_COMMENT_OK_MSG", comment: ""), vc: self)

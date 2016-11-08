@@ -52,7 +52,7 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
     
     @IBAction func webButtonPressed(sender: UIButton) {
         
-        let url = NSURL(string: "https://github.com/andreamontanari/PlaceHolder/blob/master/README.md")!
+        let url = NSURL(string: "http://mountinnovation.com/placeholder")!
         UIApplication.sharedApplication().openURL(url)
     }
 

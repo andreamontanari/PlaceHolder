@@ -28,7 +28,7 @@
     <string name="place_deleted">The place has been correctly deleted</string>
     <string name="information_task">Information</string>
     <string name="info_title">App Information</string>
-    <string name="developed_label">Developed by @ndreamontanari</string>
+    <string name="developed_label">Developed by @mountinnovation</string>
     <string name="follow_label">Support PlaceHolder</string>
     <string name="placeholder_link" translatable="false">placeholder.it</string>
     <string name="erase_btn_label">Delete everything</string>
@@ -39,7 +39,7 @@
     <string name="facebook_codepage" translatable="false">1402856883316764</string>
     <string name="mail_object">PlaceHolder Request</string>
     <string name="mail_error">Error on preparing the mail, try again!</string>
-    <string name="web_url" translatable="false">https://github.com/andreamontanari/PlaceHolder</string>
+    <string name="web_url" translatable="false">https://github.com/andreamontanari/PlaceHolder/blob/master/README.md</string>
     <string name="copied_place">Place copied!</string>
     <string name="ask_erase_all">Do you really want to delete all saved places?</string>
     <string name="facebook_app_id" translatable="false">523336767867452</string>

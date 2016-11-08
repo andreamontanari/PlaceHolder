@@ -27,14 +27,14 @@
 
 //PlacesVC
 "PLACE_COPIED" = "Place copied successfully";
-"PLACE_COMMENT_PLACEHOLDER" = "Write a custom note for the saved place";
+"PLACE_COMMENT_PLACEHOLDER" = "Your notes for this place";
 
 //InfoVC
 "RESET_ALL_TITLE" = "Reset all";
 "RESET_ALL_MSG" = "Do you really want to delete all saved places?";
 "RESET_ALL_CONFIRM" = "Yes, reset";
 "MAIL_OBJECT" = "PlaceHolder Request";
-"MAIL_BODY" = "Dear Andrea,";
+"MAIL_BODY" = "Dear MountInnovation Team,";
 "ERR_MAIL_TITLE" = "Could Not Send Email";
 "ERR_MAIL_MSG" = "Your device could not send e-mail.  Please check e-mail configuration and try again.";
 

@@ -35,7 +35,7 @@
 "RESET_ALL_MSG" = "Vuoi davvero eliminare tutte le posizioni salvate?";
 "RESET_ALL_CONFIRM" = "Si, elimina";
 "MAIL_OBJECT" = "Richiesta PlaceHolder";
-"MAIL_BODY" = "Ciao Andrea,";
+"MAIL_BODY" = "Ciao MountInnovation Team,";
 "ERR_MAIL_TITLE" = "Errore invio email";
 "ERR_MAIL_MSG" = "Il dispositivo non può inviare email, controlla la configurazione dell'email e riprova.";
 

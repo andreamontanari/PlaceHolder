@@ -71,7 +71,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
             
                 let placeholder = NSLocalizedString("PLACE_COMMENT_PLACEHOLDER", comment: "")
                 
-                let comment = place.placeComment == nil || place.placeComment == "" ? "\"\(placeholder)\"" : "\"\(place.placeComment!)\""
+                let comment = place.placeComment == nil || place.placeComment == "" ? "\(placeholder)" : "\(place.placeComment!)"
                 cell.configureCell(place.streetName, coords: place.latlng, comment: comment)
                 
                 return cell

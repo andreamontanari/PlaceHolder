@@ -20,7 +20,7 @@
         android:layout_width="65dp"
         android:layout_height="65dp"
         android:id="@+id/devTeam"
-        android:src="@drawable/intro_logo"
+        android:src="@mipmap/ic_mount_logo"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/introLabel"
         android:layout_centerHorizontal="true" />

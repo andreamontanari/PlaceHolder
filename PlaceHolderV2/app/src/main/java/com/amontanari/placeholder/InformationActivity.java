@@ -129,7 +129,7 @@ public class InformationActivity extends AppCompatActivity {
     }
 
     public void contactDeveloper(View view) {
-        Intent i = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + "andrea.montanari@gmail.com"));
+        Intent i = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + "dev@mountinnovation.com"));
         i.putExtra(Intent.EXTRA_SUBJECT, R.string.mail_object);
         i.putExtra(Intent.EXTRA_TEXT   , "");
         try {
