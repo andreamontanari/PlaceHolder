@@ -1,5 +1,5 @@
 # PlaceHolder
-Android (and soon iOS) app to save the locations you don't want to lose!
+Android and iOS app to save the locations you don't want to lose!
 
 Main Features:
   - Completely free
@@ -28,6 +28,7 @@ And of course PlaceHolder itself is open source with a [public repository](https
 ### Installation
 
 Download PlaceHolder from Google Play Store (https://play.google.com/store/apps/details?id=com.andreamontanari.placeholder)
+Download PlaceHolder from App Store (https://itunes.apple.com/us/app/iplaceholder/id1155818508?l=it&ls=1&mt=8)
 
 ### Future Development
 
